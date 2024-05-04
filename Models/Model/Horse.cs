@@ -8,9 +8,9 @@ namespace Kallesstaldsystem.Model
 {
     internal class Horse
     {
+        public int Id;
         public string Name;
         public string CHRId;
-        private int _id;
         //køn
         //type
 

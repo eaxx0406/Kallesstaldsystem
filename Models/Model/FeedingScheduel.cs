@@ -8,8 +8,7 @@ namespace Kallesstaldsystem.Model
 {
     internal class FeedingScheduel
     {
-        private int _id;
-
+        public int Id;
         public string Morning;
         public string Noon;
         public string Evening;

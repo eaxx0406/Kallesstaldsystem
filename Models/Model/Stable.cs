@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Kallesstaldsystem.Model
 {
-    internal class Box
+    internal class Stable
     {
-        private int _id;
-        public bool leased = false;
-
+        public int Id;
+        public string Name;
+       
+        public List<Box> Boxes;
     }
 }

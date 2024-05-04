@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Kallesstaldsystem.Model
 {
-    internal class Paddock
+    internal class HorseOwner
     {
+        public int Id;
         public string Name;
-        private int _id;
-        public bool Leased = false;
+        public string Phone;
+
+        List<Horse> _horseList;
+        List<Paddock> _paddockList;
+        List<Box> _boxList;
     }
 }
