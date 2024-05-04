@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryTest", "RepoTest\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{208E0703-9CAA-469D-9FDC-4ECB926D7B19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stable management system", "Stable management system\Stable management system.csproj", "{1717B2D2-CECC-4222-9157-027F4CFD5EE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StableManagementSystem", "Stable management system\StableManagementSystem.csproj", "{1717B2D2-CECC-4222-9157-027F4CFD5EE8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TextFiles", "TextFiles", "{1BB14A33-D724-4DD1-9545-A246E041BBAD}"
 	ProjectSection(SolutionItems) = preProject
