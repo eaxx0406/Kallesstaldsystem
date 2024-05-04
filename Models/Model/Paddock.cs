@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Kallesstaldsystem.Model
 {
-    internal class Paddock
+    public class Paddock
     {
-        public int Id;
-        public string Name;
-        public bool Leased = false;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public bool Leased { get; set; }
     }
 }

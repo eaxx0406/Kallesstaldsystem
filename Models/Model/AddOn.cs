@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Kallesstaldsystem.Model
 {
-    internal class AddOn
+    public class AddOn
     {
-        public int Id;
-        private string _name;
+        public int Id { get; set; }
+        public string _name { get; set; }
       
     }
 }

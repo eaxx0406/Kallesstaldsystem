@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 
 namespace Kallesstaldsystem.Model
 {
-    internal class Horse
+    public class Horse
     {
-        public int Id;
-        public string Name;
-        public string CHRId;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string CHRId { get; set; }
         //køn
         //type
 
-        public Paddock paddock;
-        private HorseOwner owner;
-        public Box box;
-        public FeedingScheduel feedingScheduel;
-        List<AddOn> addOns = new List<AddOn>();
-        List<Deviation> deviationList = new List<Deviation>();  
+        public Paddock Paddock { get; set; }
+        public HorseOwner Owner { get; set; }
+        public Box Box { get; set; }
+        public FeedingScheduel FeedingScheduel { get; set; }
+
+        public List<AddOn> AddOns { get; set; } = new List<AddOn>();
+        public List<Deviation> DeviationList { get; set; } = new List<Deviation>();
     }
 }

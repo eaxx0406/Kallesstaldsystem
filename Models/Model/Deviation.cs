@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Kallesstaldsystem.Model
 {
-    internal class Deviation
+    public class Deviation
     {
-        public int Id;
-        public string Description;
-        public DateTime Startdate;
-        public DateTime Enddate;
+        public int Id { get; set; }
+        public string Description { get; set; }
+        public DateTime Startdate { get; set; }
+        public DateTime Enddate { get; set; }
 
     }
 }

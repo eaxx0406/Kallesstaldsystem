@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Kallesstaldsystem.Model
 {
-    internal class FeedingScheduel
+    public class FeedingScheduel
     {
-        public int Id;
-        public string Morning;
-        public string Noon;
-        public string Evening;
+        public int Id { get; set; }
+        public string Morning { get; set; }
+        public string Noon { get; set; }
+        public string Evening { get; set; }
     }
 }

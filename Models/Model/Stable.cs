@@ -8,9 +8,9 @@ namespace Kallesstaldsystem.Model
 {
     internal class Stable
     {
-        public int Id;
-        public string Name;
+        public int Id { get; set; }
+        public string Name { get; set; }
        
-        public List<Box> Boxes;
+        public List<Box> Boxes { get; set; } = new List<Box>();
     }
 }
