@@ -1,0 +1,2 @@
+"Id"	"Name"	"ChrId"	"Type"	"Gender"	"PaddockId"	"OwnerId"	"BoxId"	"FeedingScheduelId"
+"1"	"Basse"	"xxx"	"2"	"2"	"8"	"23"	"25"	"48"

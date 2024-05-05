@@ -1,4 +1,5 @@
-﻿
+﻿using Kallesstaldsystem.Model;
+
 namespace Application.Repostories
 {
     public class HorseRepository : IRepository<Horse>
@@ -6,7 +7,7 @@ namespace Application.Repostories
         private List<Horse> _horses { get; set; }
         public void Add(Horse entity)
         {
-            throw new NotImplementedException();
+            _horses.Add(entity);
         }
 
         public void Delete(Horse entity)

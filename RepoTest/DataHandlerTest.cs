@@ -1,11 +1,33 @@
+using Kallesstaldsystem.Model;
+using System.Reflection.Emit;
+
 namespace RepoTest
 {
     [TestClass]
     public class DataHandlerTest
     {
-        [TestMethod]
-        public void TestMethod1()
+
+        [TestInitialize]
+
+        public void Init()
+
         {
+
+            // Arrange
+
+           // Horse h1 = new Horse();
+
+        }
+
+        [TestMethod]
+
+        public void TestGet()
+
+        {
+
+            // Assert
+
+           // Assert.AreEqual();
 
         }
     }
