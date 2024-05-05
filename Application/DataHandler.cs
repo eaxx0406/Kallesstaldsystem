@@ -2,9 +2,12 @@
 using Kallesstaldsystem.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using System.Xml.XPath;
 using static Kallesstaldsystem.Model.Horse;
 
@@ -52,7 +55,15 @@ namespace Application
         }
         public void Write() 
         {
-            CheckIfFileExist();
+            List<Horse> lines = (List<Horse>)_horseRepository.GetAll();
+            foreach (Horse horse in lines)
+            {
+                Console.OutputEncoding = Encoding.UTF8;
+                string CreateText = $"\"{horse.Id}\"    \"{horse.Name}\"    \"{horse.CHRId}\"    \"{horse.HorseType}\"   \"{horse.HorseGender}\"  \"{horse.PaddockId}\"   \"{horse.OwnerId}\" \"{horse.BoxId}\"   \"{horse.FeedingScheduelId}\"";
+
+                //File.AppendAllText(StockFilepath, Environment.NewLine + CreateText);
+                //BoardGame boardGame = new BoardGame(name, id, genre, min, max, state, price, status);
+            }
 
         }
     }

@@ -11,8 +11,8 @@ namespace Kallesstaldsystem.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public string CHRId { get; set; }
-        EquineType Type { get; set; }
-        Gender HorseGender { get; set; }
+        public EquineType HorseType { get; set; }
+        public Gender HorseGender { get; set; }
 
         public int PaddockId { get; set; }
         public int OwnerId { get; set; }
@@ -34,7 +34,7 @@ namespace Kallesstaldsystem.Model
             Id = id;
             Name = name;
             CHRId = cHRId;
-            Type = type;
+            HorseType = type;
             HorseGender = gender;
         }
 
@@ -44,7 +44,7 @@ namespace Kallesstaldsystem.Model
             Id = id;
             Name = name;
             CHRId = cHRId;
-            Type = type;
+            HorseType = type;
             HorseGender = gender;
             PaddockId = paddockId;
             OwnerId = ownerId;
