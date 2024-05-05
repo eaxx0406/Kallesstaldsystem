@@ -1,36 +1,39 @@
 ﻿using Application.Repostories;
 using Kallesstaldsystem.Model;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net.NetworkInformation;
 using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using System.Xml.XPath;
 using static Kallesstaldsystem.Model.Horse;
 
 namespace Application
 {
-    internal class DataHandler
+    public class DataHandler
     {
-        private HorseRepository _horseRepository = new HorseRepository();
-        private string PathName = @"C:\Horses.txt";
+        public HorseRepository _horseRepository = new HorseRepository();
+        private static string _horseFilePath = @"C:\Horses.txt";
 
-        public void CheckIfFileExist()
-        {
-            if (! File.Exists(PathName))
-            {
-                FileStream fs = File.Create(PathName);
-            }
-            
-        }
         public void Read()
         {
-            CheckIfFileExist();
+            this.ReadHorses();
 
-            List<string> lines = File.ReadLines(PathName).ToList();
+        }
+        public void Write()
+        {
+            this.WriteHorses();
+        }
+
+        public void CheckIfFileExist(string FullPath)
+        {
+            if (! File.Exists(FullPath))
+            {
+                FileStream fs = File.Create(FullPath);
+            }
+        }
+
+       
+        private void ReadHorses()
+        {
+            CheckIfFileExist(_horseFilePath);
+
+            List<string> lines = File.ReadLines(_horseFilePath).ToList();
             lines.RemoveAt(0);
             foreach (var line in lines)
             {
@@ -49,22 +52,29 @@ namespace Application
                 Horse horse = new Horse(id,name,chrId,type,gender);
                 _horseRepository.Add(horse);
             }
-
-
-
         }
-        public void Write() 
+        public void WriteHorses() 
         {
+            CheckIfFileExist(_horseFilePath);
             List<Horse> lines = (List<Horse>)_horseRepository.GetAll();
             foreach (Horse horse in lines)
             {
                 Console.OutputEncoding = Encoding.UTF8;
-                string CreateText = $"\"{horse.Id}\"    \"{horse.Name}\"    \"{horse.CHRId}\"    \"{horse.HorseType}\"   \"{horse.HorseGender}\"  \"{horse.PaddockId}\"   \"{horse.OwnerId}\" \"{horse.BoxId}\"   \"{horse.FeedingScheduelId}\"";
-
-                //File.AppendAllText(StockFilepath, Environment.NewLine + CreateText);
-                //BoardGame boardGame = new BoardGame(name, id, genre, min, max, state, price, status);
+                string createText = $"\"{horse.Id}\"    \"{horse.Name}\"    \"{horse.CHRId}\"    \"{horse.HorseType}\"   \"{horse.HorseGender}\"  \"{horse.PaddockId}\"   \"{horse.OwnerId}\" \"{horse.BoxId}\"   \"{horse.FeedingScheduelId}\"";
+                File.AppendAllText(_horseFilePath, Environment.NewLine + createText);
             }
-
         }
+
+        public void ReadOwners()
+        {
+            //TODO
+        }
+        public void WriteOwners() 
+        {
+            //TODO
+        }
+
+
+
     }
 }

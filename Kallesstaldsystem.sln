@@ -5,18 +5,13 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{CD954CED-2173-4164-AF05-AB991197CF4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{7AC478E7-8813-4685-ADF2-8072B413FD88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{7AC478E7-8813-4685-ADF2-8072B413FD88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryTest", "RepoTest\RepositoryTest.csproj", "{5446E7AC-B756-4114-8211-F0A2F8D9CC35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryTest", "RepoTest\RepositoryTest.csproj", "{5446E7AC-B756-4114-8211-F0A2F8D9CC35}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{208E0703-9CAA-469D-9FDC-4ECB926D7B19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StableManagementSystem", "Stable management system\StableManagementSystem.csproj", "{1717B2D2-CECC-4222-9157-027F4CFD5EE8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TextFiles", "TextFiles", "{1BB14A33-D724-4DD1-9545-A246E041BBAD}"
-	ProjectSection(SolutionItems) = preProject
-		TextFile1.txt = TextFile1.txt
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StableManagementSystem", "Stable management system\StableManagementSystem.csproj", "{1717B2D2-CECC-4222-9157-027F4CFD5EE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

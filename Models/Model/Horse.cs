@@ -64,5 +64,9 @@ namespace Kallesstaldsystem.Model
             Gelding,
             Stallion
         }
+        public override string ToString()
+        {
+            return "Hest: id: " + Id + ", Navn: " + Name + ", CHRid: " + CHRId + ", Type: " + HorseType + ", Køn: " + HorseGender ;
+        }
     }
 }

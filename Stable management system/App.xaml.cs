@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace Stable_management_system
+namespace StableManagementSystem
 {
     /// <summary>
     /// Interaction logic for App.xaml
