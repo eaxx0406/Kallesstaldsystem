@@ -20,10 +20,10 @@ namespace Kallesstaldsystem.Model
         public int FeedingScheduelId { get; set; }
 
 
-        //public Paddock Paddock { get; set; }
-        //public HorseOwner Owner { get; set; }
-        //public Box Box { get; set; }
-        //public FeedingScheduel FeedingScheduel { get; set; }
+        public Paddock Paddock { get; set; }
+        public HorseOwner Owner { get; set; }
+        public Box Box { get; set; }
+        public FeedingScheduel FeedingScheduel { get; set; }
 
         public List<AddOn> AddOns { get; set; } = new List<AddOn>();
         public List<Deviation> DeviationList { get; set; } = new List<Deviation>();
