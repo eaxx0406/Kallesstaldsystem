@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Application.DataHandlers.DomæneDatahandler
 {
-    internal class BoxDatahandler
+    internal class FeedingScheduelDataHandler
     {
-        public BoxRepository _boxRepository = new BoxRepository();
-        private static string _filePath = @"C:\box.txt";
+        public FeedingScheduelRepository _feedingScheduelsRepository = new FeedingScheduelRepository();
+        private static string _filePath = @"C:\feedingscheduel.txt";
 
         public void CheckIfFileExist(string FullPath)
         {
@@ -31,22 +31,22 @@ namespace Application.DataHandlers.DomæneDatahandler
                 string[] values = line.Split('\t');
 
                 int id = int.Parse(values[0]);
-                string name = values[1];
-                bool leased = Convert.ToBoolean(values[2]);
+                string morning = values[1];
+                string noon = values[2];
+                string evening = values[3];
 
-                Box box = new Box(id, name, leased);
-                _boxRepository.Add(box);
+                FeedingScheduel feedingScheduel = new FeedingScheduel(id,morning,noon,evening);
+                _feedingScheduelsRepository.Add(feedingScheduel);
             }
         }
-
         public void Write()
         {
             CheckIfFileExist(_filePath);
-            List<Box> lines = (List<Box>)_boxRepository.GetAll();
-            foreach (Box box in lines)
+            List<FeedingScheduel> lines = (List<FeedingScheduel>)_feedingScheduelsRepository.GetAll();
+            foreach (FeedingScheduel feedingScheduel in lines)
             {
                 Console.OutputEncoding = Encoding.UTF8;
-                string createText = $"\"{box.Id}\"    \"{box.Name}\"    \"{box.Leased}\"";
+                string createText = $"\"{feedingScheduel.Id}\"    \"{feedingScheduel.Morning}\"    \"{feedingScheduel.Noon}\"   \"{feedingScheduel.Evening}\"";
                 File.AppendAllText(_filePath, Environment.NewLine + createText);
             }
         }

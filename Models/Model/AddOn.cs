@@ -9,7 +9,12 @@ namespace Kallesstaldsystem.Model
     public class AddOn
     {
         public int Id { get; set; }
-        public string _name { get; set; }
+        public string Name { get; set; }
       
+        public AddOn(int id, string name)
+        {
+            Id = id;
+            Name = name;
+        }
     }
 }

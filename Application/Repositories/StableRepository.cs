@@ -15,7 +15,7 @@ namespace Application.Repositories
             throw new NotImplementedException();
         }
 
-        public void Delete(Stable entity)
+        public void Remove(Stable entity)
         {
             throw new NotImplementedException();
         }

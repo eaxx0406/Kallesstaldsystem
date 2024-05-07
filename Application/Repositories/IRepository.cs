@@ -10,7 +10,7 @@ namespace Application.Repostories
     {
         void Add(T entity);
         void Update(T entity);
-        void Delete(T entity);
+        void Remove(T entity);
         IEnumerable<T> GetAll();
         T GetById(int id);
     }

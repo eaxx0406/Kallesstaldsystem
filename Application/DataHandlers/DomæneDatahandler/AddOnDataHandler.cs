@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Application.DataHandlers.DomæneDatahandler
 {
-    internal class BoxDatahandler
+    internal class AddOnDataHandler
     {
-        public BoxRepository _boxRepository = new BoxRepository();
-        private static string _filePath = @"C:\box.txt";
+        public AddOnRepository _addOnRepository = new AddOnRepository();
+        private static string _filePath = @"C:\addon.txt";
 
         public void CheckIfFileExist(string FullPath)
         {
@@ -32,22 +32,9 @@ namespace Application.DataHandlers.DomæneDatahandler
 
                 int id = int.Parse(values[0]);
                 string name = values[1];
-                bool leased = Convert.ToBoolean(values[2]);
-
-                Box box = new Box(id, name, leased);
-                _boxRepository.Add(box);
-            }
-        }
-
-        public void Write()
-        {
-            CheckIfFileExist(_filePath);
-            List<Box> lines = (List<Box>)_boxRepository.GetAll();
-            foreach (Box box in lines)
-            {
-                Console.OutputEncoding = Encoding.UTF8;
-                string createText = $"\"{box.Id}\"    \"{box.Name}\"    \"{box.Leased}\"";
-                File.AppendAllText(_filePath, Environment.NewLine + createText);
+               
+                AddOn addOn = new AddOn(id, name);
+                _addOnRepository.Add(addOn);
             }
         }
     }

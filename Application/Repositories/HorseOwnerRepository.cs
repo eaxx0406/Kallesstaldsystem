@@ -16,7 +16,7 @@ namespace Application.Repositories
             throw new NotImplementedException();
         }
 
-        public void Delete(HorseOwner entity)
+        public void Remove(HorseOwner entity)
         {
             throw new NotImplementedException();
         }

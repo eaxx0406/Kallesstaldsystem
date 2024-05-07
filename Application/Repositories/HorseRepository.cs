@@ -10,7 +10,7 @@ namespace Application.Repostories
             _horses.Add(entity);
         }
 
-        public void Delete(Horse entity)
+        public void Remove(Horse entity)
         {
             throw new NotImplementedException();
         }

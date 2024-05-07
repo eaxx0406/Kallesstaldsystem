@@ -8,29 +8,29 @@ using System.Threading.Tasks;
 
 namespace Application.Repositories
 {
-    internal class BoxRepository : IRepository<Box>
+    internal class FeedingScheduelRepository : IRepository<FeedingScheduel>
     {
-        public void Add(Box entity)
+        public void Add(FeedingScheduel entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(Box entity)
+        public void Remove(FeedingScheduel entity)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Box> GetAll()
+        public IEnumerable<FeedingScheduel> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public Box GetById(int id)
+        public FeedingScheduel GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Box entity)
+        public void Update(FeedingScheduel entity)
         {
             throw new NotImplementedException();
         }

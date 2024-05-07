@@ -20,7 +20,7 @@ namespace Application.DataHandlers.DomæneDatahandler
                 FileStream fs = File.Create(FullPath);
             }
         }
-        public void ReadStables()
+        public void Read()
         {
             CheckIfFileExist(_filePath);
 

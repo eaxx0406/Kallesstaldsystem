@@ -20,7 +20,7 @@ namespace Application.DataHandlers.DomæneDatahandler
                 FileStream fs = File.Create(FullPath);
             }
         }
-        public void ReadPaddocks()
+        public void Read()
         {
             CheckIfFileExist(_filePath);
 
@@ -39,7 +39,7 @@ namespace Application.DataHandlers.DomæneDatahandler
             }
         }
 
-        public void WritePaddocks()
+        public void Write()
         {
             CheckIfFileExist(_filePath);
             List<Paddock> lines = (List<Paddock>)_paddockRepository.GetAll();

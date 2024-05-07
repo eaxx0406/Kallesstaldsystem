@@ -15,7 +15,7 @@ namespace Application.Repositories
             throw new NotImplementedException();
         }
 
-        public void Delete(Paddock entity)
+        public void Remove(Paddock entity)
         {
             throw new NotImplementedException();
         }

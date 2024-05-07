@@ -21,7 +21,7 @@ namespace Application.DataHandlers.DomæneDatahandler
                 FileStream fs = File.Create(FullPath);
             }
         }
-        public void ReadHorses()
+        public void Read()
         {
             CheckIfFileExist(_filePath);
 
@@ -45,7 +45,7 @@ namespace Application.DataHandlers.DomæneDatahandler
                 _horseRepository.Add(horse);
             }
         }
-        public void WriteHorses()
+        public void Write()
         {
             CheckIfFileExist(_filePath);
             List<Horse> lines = (List<Horse>)_horseRepository.GetAll();

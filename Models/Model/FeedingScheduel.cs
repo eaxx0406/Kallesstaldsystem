@@ -12,5 +12,13 @@ namespace Kallesstaldsystem.Model
         public string Morning { get; set; }
         public string Noon { get; set; }
         public string Evening { get; set; }
+
+        public FeedingScheduel(int id, string morning, string noon,string evening) 
+        { 
+            Id = id;
+            Morning = morning;
+            Noon = noon;
+            Evening = evening;
+        }
     }
 }

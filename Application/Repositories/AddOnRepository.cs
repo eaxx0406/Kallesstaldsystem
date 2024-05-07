@@ -8,29 +8,29 @@ using System.Threading.Tasks;
 
 namespace Application.Repositories
 {
-    internal class BoxRepository : IRepository<Box>
+    internal class AddOnRepository : IRepository<AddOn>
     {
-        public void Add(Box entity)
+        public void Add(AddOn entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(Box entity)
+        public void Remove(AddOn entity)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Box> GetAll()
+        public IEnumerable<AddOn> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public Box GetById(int id)
+        public AddOn GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Box entity)
+        public void Update(AddOn entity)
         {
             throw new NotImplementedException();
         }
