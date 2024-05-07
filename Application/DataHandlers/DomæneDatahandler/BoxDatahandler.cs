@@ -1,14 +1,17 @@
 ﻿using Application.Repositories;
 using Kallesstaldsystem.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Application.DataHandlers.DomæneDatahandler
 {
-    internal class HorseOwnerDataHandler
+    internal class BoxDatahandler
     {
-
-        public HorseOwnerRepository _horseOwnerRepository = new HorseOwnerRepository();
-        private static string _filePath = @"C:\HorseOwner.txt";
+        public BoxRepository _boxRepository = new BoxRepository();
+        private static string _filePath = @"C:\box.txt";
 
         public void CheckIfFileExist(string FullPath)
         {
@@ -17,32 +20,33 @@ namespace Application.DataHandlers.DomæneDatahandler
                 FileStream fs = File.Create(FullPath);
             }
         }
-        public void ReadHorseOwners()
+        public void ReadBoxes()
         {
             CheckIfFileExist(_filePath);
 
             List<string> lines = File.ReadLines(_filePath).ToList();
             lines.RemoveAt(0);
-            foreach (var line in lines)
+            foreach (string line in lines)
             {
                 string[] values = line.Split('\t');
 
                 int id = int.Parse(values[0]);
                 string name = values[1];
-                string phone = values[2];
+                bool leased = Convert.ToBoolean(values[2]);
 
-                HorseOwner newOwner = new HorseOwner(id,name,phone);
-                _horseOwnerRepository.Add(newOwner);
+                Box box = new Box(id, name, leased);
+                _boxRepository.Add(box);
             }
         }
-        public void WriteHorseOwners()
+
+        public void WritePaddocks()
         {
             CheckIfFileExist(_filePath);
-            List<HorseOwner> lines = (List<HorseOwner>)_horseOwnerRepository.GetAll();
-            foreach (HorseOwner horseOwner in lines)
+            List<Box> lines = (List<Box>)_boxRepository.GetAll();
+            foreach (Box box in lines)
             {
                 Console.OutputEncoding = Encoding.UTF8;
-                string createText = $"\"{horseOwner.Id}\"    \"{horseOwner.Name}\"    \"{horseOwner.Phone}\"";
+                string createText = $"\"{box.Id}\"    \"{box.Name}\"    \"{box.Leased}\"";
                 File.AppendAllText(_filePath, Environment.NewLine + createText);
             }
         }

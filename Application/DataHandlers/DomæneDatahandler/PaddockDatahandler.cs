@@ -10,7 +10,7 @@ namespace Application.DataHandlers.DomæneDatahandler
 {
     internal class PaddockDatahandler
     {
-        public PaddockRepository _paddockepository = new PaddockRepository();
+        public PaddockRepository _paddockRepository = new PaddockRepository();
         private static string _filePath = @"C:\Paddock.txt";
 
         public void CheckIfFileExist(string FullPath)
@@ -33,13 +33,16 @@ namespace Application.DataHandlers.DomæneDatahandler
                 int id = int.Parse(values[0]);
                 string name = values[1];
                 bool leased = Convert.ToBoolean(values[2]);
+
+                Paddock newPaddock = new Paddock(id, name, leased);
+                _paddockRepository.Add(newPaddock);
             }
         }
 
         public void WritePaddocks()
         {
             CheckIfFileExist(_filePath);
-            List<Paddock> lines = (List<Paddock>)_paddockepository.GetAll();
+            List<Paddock> lines = (List<Paddock>)_paddockRepository.GetAll();
             foreach (Paddock paddock in lines)
             {
                 Console.OutputEncoding = Encoding.UTF8;

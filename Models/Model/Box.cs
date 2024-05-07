@@ -12,5 +12,11 @@ namespace Kallesstaldsystem.Model
         public string Name { get; set; }
         public bool Leased { get; set; }
 
+        public Box(int id, string name, bool leased)
+        {
+            Id = id;
+            Name = name;
+            Leased = leased;
+        }
     }
 }

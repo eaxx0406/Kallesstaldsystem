@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace Kallesstaldsystem.Model
 {
-    internal class Stable
+    public class Stable
     {
         public int Id { get; set; }
         public string Name { get; set; }
-       
+
         public List<Box> Boxes { get; set; } = new List<Box>();
+
+
+        public Stable(int id, string name)
+        {
+            Id = id;
+            Name = name;
+        } 
     }
 }

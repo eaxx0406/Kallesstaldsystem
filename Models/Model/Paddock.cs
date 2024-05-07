@@ -11,5 +11,12 @@ namespace Kallesstaldsystem.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public bool Leased { get; set; }
+
+        public Paddock(int id, string name, bool leased)
+        {
+            Id = id;
+            Name = name;
+            Leased = leased;
+        }
     }
 }

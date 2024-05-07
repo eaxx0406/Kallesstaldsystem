@@ -28,15 +28,6 @@ namespace Kallesstaldsystem.Model
             Phone = phone;
         }
 
-        //Advanced construktor
-        public HorseOwner(int id, string name, string phone, List<int> horseIds,List<int>paddockIds, List<int> boxIds) 
-        {
-            Id=id;
-            Name = name;
-            Phone = phone;
-            HorseIds = horseIds;
-            PaddockIds = paddockIds;
-            BoxIds = boxIds;
-        }
+       
     }
 }
