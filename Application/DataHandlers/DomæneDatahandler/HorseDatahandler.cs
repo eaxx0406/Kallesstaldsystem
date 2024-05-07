@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Kallesstaldsystem.Model.Horse;
 
-namespace Application.DataHandlers
+namespace Application.DataHandlers.DomæneDatahandler
 {
     internal class HorseDatahandler
     {

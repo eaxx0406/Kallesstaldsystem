@@ -2,7 +2,7 @@
 using Kallesstaldsystem.Model;
 using System.Text;
 
-namespace Application.DataHandlers
+namespace Application.DataHandlers.DomæneDatahandler
 {
     internal class HorseOwnerDataHandler
     {
