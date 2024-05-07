@@ -1,8 +1,4 @@
 ﻿using Application.DataHandlers.DomæneDatahandler;
-using Application.Repostories;
-using Kallesstaldsystem.Model;
-using System.Text;
-using static Kallesstaldsystem.Model.Horse;
 
 namespace Application.DataHandlers
 {
