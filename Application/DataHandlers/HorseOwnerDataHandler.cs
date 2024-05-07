@@ -1,13 +1,6 @@
 ﻿using Application.Repositories;
-using Application.Repostories;
 using Kallesstaldsystem.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using static Kallesstaldsystem.Model.Horse;
-using static Kallesstaldsystem.Model.HorseOwner;
 
 namespace Application.DataHandlers
 {
@@ -78,39 +71,32 @@ namespace Application.DataHandlers
                 StringBuilder stringBuilderPaddockIds = new StringBuilder();
                 StringBuilder stringBuilderBoxIds = new StringBuilder();
 
-            //Horses
-                //If more than one horse 
-                if (horseOwner.HorseIds.Count > 1)
+                //Horses
+                int i;
+                for (i = 0; i < (horseOwner.BoxIds.Count - 1); i++)
                 {
-                    foreach (int HorseId in horseOwner.HorseIds)
-                    {
-                        stringBuilderHorseIds.Append($"{HorseId}:");
-                    }
+                    stringBuilderBoxIds.Append($"{horseOwner.BoxIds[i]}:");
                 }
-                else { stringBuilderHorseIds.Append(horseOwner.HorseIds[0]); }
+                i++;
+                stringBuilderBoxIds.Append(horseOwner.BoxIds[i]);
 
-            //Paddock
-                //If more than one paddock 
-                if (horseOwner.PaddockIds.Count > 1)
+                //Paddock
+                int j;
+                for (j = 0; j < (horseOwner.PaddockIds.Count - 1); j++)
                 {
-                    foreach (int paddockId in horseOwner.PaddockIds)
-                    {
-                        stringBuilderPaddockIds.Append($"{paddockId}:");
-                    }
+                    stringBuilderPaddoIds.Append($"{horseOwner.PaddockIds[j]}:");
                 }
-                else { stringBuilderPaddockIds.Append(horseOwner.HorseIds[0]); }
+                j++;
+                stringBuilderBoxIds.Append(horseOwner.BoxIds[j]);
 
-            //Box
-                //If more than one box
-                if (horseOwner.BoxIds.Count > 1)
-                {
-                    foreach (int boxId in horseOwner.BoxIds)
+                //Box
+                int k;
+                    for ( k = 0; k < (horseOwner.BoxIds.Count - 1);k++)
                     {
-                        stringBuilderBoxIds.Append($"{boxId}:");
+                        stringBuilderBoxIds.Append($"{horseOwner.BoxIds[k]}:");
                     }
-                }
-                else { stringBuilderBoxIds.Append(horseOwner.BoxIds[0]); }
-
+                k++;
+                stringBuilderBoxIds.Append(horseOwner.BoxIds[k]);
 
                 Console.OutputEncoding = Encoding.UTF8;
                 string createText = $"\"{horseOwner.Id}\"    \"{horseOwner.Name}\"    \"{horseOwner.Phone}\"    \"{stringBuilderHorseIds}\"   \"{stringBuilderPaddockIds}\"  \"{stringBuilderBoxIds}\"";
