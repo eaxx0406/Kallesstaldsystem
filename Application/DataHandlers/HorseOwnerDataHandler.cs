@@ -67,39 +67,8 @@ namespace Application.DataHandlers
             List<HorseOwner> lines = (List<HorseOwner>)_horseOwnerRepository.GetAll();
             foreach (HorseOwner horseOwner in lines)
             {
-                StringBuilder stringBuilderHorseIds = new StringBuilder();
-                StringBuilder stringBuilderPaddockIds = new StringBuilder();
-                StringBuilder stringBuilderBoxIds = new StringBuilder();
-
-                //Horses
-                int i;
-                for (i = 0; i < (horseOwner.BoxIds.Count - 1); i++)
-                {
-                    stringBuilderBoxIds.Append($"{horseOwner.BoxIds[i]}:");
-                }
-                i++;
-                stringBuilderBoxIds.Append(horseOwner.BoxIds[i]);
-
-                //Paddock
-                int j;
-                for (j = 0; j < (horseOwner.PaddockIds.Count - 1); j++)
-                {
-                    stringBuilderPaddoIds.Append($"{horseOwner.PaddockIds[j]}:");
-                }
-                j++;
-                stringBuilderBoxIds.Append(horseOwner.BoxIds[j]);
-
-                //Box
-                int k;
-                    for ( k = 0; k < (horseOwner.BoxIds.Count - 1);k++)
-                    {
-                        stringBuilderBoxIds.Append($"{horseOwner.BoxIds[k]}:");
-                    }
-                k++;
-                stringBuilderBoxIds.Append(horseOwner.BoxIds[k]);
-
                 Console.OutputEncoding = Encoding.UTF8;
-                string createText = $"\"{horseOwner.Id}\"    \"{horseOwner.Name}\"    \"{horseOwner.Phone}\"    \"{stringBuilderHorseIds}\"   \"{stringBuilderPaddockIds}\"  \"{stringBuilderBoxIds}\"";
+                string createText = $"\"{horseOwner.Id}\"    \"{horseOwner.Name}\"    \"{horseOwner.Phone}\"";
                 File.AppendAllText(_filePath, Environment.NewLine + createText);
             }
         }
