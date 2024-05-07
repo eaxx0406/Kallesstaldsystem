@@ -30,35 +30,6 @@ namespace Application.DataHandlers
                 int id = int.Parse(values[0]);
                 string name = values[1];
                 string phone = values[2];
-
-                //Liste med hesteIder (adskilt med : måske) 
-                string[] horseIds = values[3].Split(':');
-                List<int> horseIdsInt = new List<int>();
-
-                foreach (string horseId in horseIds) 
-                {
-                   int horseIdInt = int.Parse(horseId);
-                   horseIdsInt.Add(horseIdInt);
-                }
-                //Liste med foldIder (adskilt med : måske)
-                string[] paddockIds = values[4].Split(':');
-                List<int> paddockIdsInt = new List<int>();
-
-                foreach (string paddockId in paddockIds)
-                {
-                    int paddockIdInt = int.Parse(paddockId);
-                    paddockIdsInt.Add(paddockIdInt);
-                }
-
-                //Liste med boksIder (adskilt med : måske) 
-                string[] boxIds = values[5].Split(':');
-                List<int> boxIdsInt = new List<int>();
-
-                foreach (string boxId in boxIds)
-                {
-                    int boxIdInt = int.Parse(boxId);
-                    boxIdsInt.Add(boxIdInt);
-                }
             }
         }
         public void WriteHorseOwners()
