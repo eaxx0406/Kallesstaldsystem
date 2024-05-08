@@ -27,7 +27,10 @@ namespace Kallesstaldsystem.Model
             Name = name;
             Phone = phone;
         }
+        public override string ToString()
+        {
+            return "Hesteejer: id: " + Id + ", Navn: " + Name + ", TLF: " + Phone;
+        }
 
-       
     }
 }

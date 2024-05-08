@@ -4,10 +4,11 @@ namespace Application.Repostories
 {
     public class HorseRepository : IRepository<Horse>
     {
-        private List<Horse> _horses { get; set; }
-        public void Add(Horse entity)
+        private List<Horse> _horses { get; set; } = new List<Horse>();
+
+        public void Add(Horse horse)
         {
-            _horses.Add(entity);
+            _horses.Add(horse);
         }
 
         public void Remove(Horse entity)
@@ -22,9 +23,9 @@ namespace Application.Repostories
 
         public Horse GetById(int id)
         {
-            foreach (Horse entity in _horses)
+            foreach (Horse horse in _horses)
             {
-                if (entity.Id == id) { return entity; }
+                if (horse.Id == id) { return horse; }
             }
             return null;
         }
