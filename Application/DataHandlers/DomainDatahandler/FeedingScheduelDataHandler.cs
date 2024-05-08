@@ -4,21 +4,15 @@ using System.Text;
 
 namespace Application.DataHandlers.DomæneDatahandler
 {
-    internal class FeedingScheduelDataHandler
+    internal class FeedingScheduelDataHandler: AbstractDataHandler
     {
         public FeedingScheduelRepository _feedingScheduelsRepository = new FeedingScheduelRepository();
         private static string _filePath = @"C:\feedingscheduel.txt";
 
-        public void CheckIfFileExist(string FullPath)
+       
+        internal override void Read()
         {
-            if (!File.Exists(FullPath))
-            {
-                FileStream fs = File.Create(FullPath);
-            }
-        }
-        public void Read()
-        {
-            CheckIfFileExist(_filePath);
+            CheckIfFileExists(_filePath);
 
             List<string> lines = File.ReadLines(_filePath).ToList();
             lines.RemoveAt(0);
@@ -35,9 +29,9 @@ namespace Application.DataHandlers.DomæneDatahandler
                 _feedingScheduelsRepository.Add(feedingScheduel);
             }
         }
-        public void Write()
+        internal override void Write()
         {
-            CheckIfFileExist(_filePath);
+            CheckIfFileExists(_filePath);
             List<FeedingScheduel> lines = (List<FeedingScheduel>)_feedingScheduelsRepository.GetAll();
             foreach (FeedingScheduel feedingScheduel in lines)
             {

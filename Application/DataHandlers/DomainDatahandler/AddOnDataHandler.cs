@@ -3,21 +3,15 @@ using Kallesstaldsystem.Model;
 
 namespace Application.DataHandlers.DomæneDatahandler
 {
-    internal class AddOnDataHandler
+    internal class AddOnDataHandler: AbstractDataHandler
     {
         public AddOnRepository _addOnRepository = new AddOnRepository();
         private static string _filePath = @"C:\addon.txt";
 
-        public void CheckIfFileExist(string FullPath)
+        
+        internal override void Read()
         {
-            if (!File.Exists(FullPath))
-            {
-                FileStream fs = File.Create(FullPath);
-            }
-        }
-        public void Read()
-        {
-            CheckIfFileExist(_filePath);
+            base.CheckIfFileExists(_filePath);
 
             List<string> lines = File.ReadLines(_filePath).ToList();
             lines.RemoveAt(0);
@@ -31,6 +25,11 @@ namespace Application.DataHandlers.DomæneDatahandler
                 AddOn addOn = new AddOn(id, name);
                 _addOnRepository.Add(addOn);
             }
+        }
+
+        internal override void Write()
+        {
+            throw new NotImplementedException();
         }
     }
 }

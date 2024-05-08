@@ -4,21 +4,14 @@ using System.Text;
 
 namespace Application.DataHandlers.DomæneDatahandler
 {
-    internal class BoxDatahandler
+    internal class BoxDatahandler: AbstractDataHandler
     {
         public BoxRepository _boxRepository = new BoxRepository();
         private static string _filePath = @"C:\box.txt";
 
-        public void CheckIfFileExist(string FullPath)
+        internal override void Read()
         {
-            if (!File.Exists(FullPath))
-            {
-                FileStream fs = File.Create(FullPath);
-            }
-        }
-        public void Read()
-        {
-            CheckIfFileExist(_filePath);
+            base.CheckIfFileExists(_filePath);
 
             List<string> lines = File.ReadLines(_filePath).ToList();
             lines.RemoveAt(0);
@@ -35,9 +28,9 @@ namespace Application.DataHandlers.DomæneDatahandler
             }
         }
 
-        public void Write()
+        internal override void Write()
         {
-            CheckIfFileExist(_filePath);
+            CheckIfFileExists(_filePath);
             List<Box> lines = (List<Box>)_boxRepository.GetAll();
             foreach (Box box in lines)
             {

@@ -5,21 +5,14 @@ using static Kallesstaldsystem.Model.Horse;
 
 namespace Application.DataHandlers.DomæneDatahandler
 {
-    internal class HorseDatahandler
+    internal class HorseDatahandler: AbstractDataHandler
     {
         public HorseRepository _horseRepository = new HorseRepository();
         private static string _filePath = @"C:\Horses.txt";
 
-        public void CheckIfFileExist(string FullPath)
+        internal override void Read()
         {
-            if (!File.Exists(FullPath))
-            {
-                FileStream fs = File.Create(FullPath);
-            }
-        }
-        public void Read()
-        {
-            CheckIfFileExist(_filePath);
+            CheckIfFileExists(_filePath);
 
             List<string> lines = File.ReadLines(_filePath).ToList();
             lines.RemoveAt(0);
@@ -41,9 +34,9 @@ namespace Application.DataHandlers.DomæneDatahandler
                 _horseRepository.Add(horse);
             }
         }
-        public void Write()
+        internal override void Write()
         {
-            CheckIfFileExist(_filePath);
+            CheckIfFileExists(_filePath);
             List<Horse> lines = (List<Horse>)_horseRepository.GetAll();
             foreach (Horse horse in lines)
             {

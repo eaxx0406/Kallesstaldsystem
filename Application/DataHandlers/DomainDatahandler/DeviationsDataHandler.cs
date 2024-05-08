@@ -4,21 +4,14 @@ using System.Text;
 
 namespace Application.DataHandlers.DomæneDatahandler
 {
-    internal class DeviationsDatahandler
+    internal class DeviationsDatahandler: AbstractDataHandler
     {
         public DeviationRepository _deviationRepository = new DeviationRepository();
         private static string _filePath = @"C:\deviation.txt";
 
-        public void CheckIfFileExist(string FullPath)
+        internal override void Read()
         {
-            if (!File.Exists(FullPath))
-            {
-                FileStream fs = File.Create(FullPath);
-            }
-        }
-        public void Read()
-        {
-            CheckIfFileExist(_filePath);
+           CheckIfFileExists(_filePath);
 
             List<string> lines = File.ReadLines(_filePath).ToList();
             lines.RemoveAt(0);
@@ -36,9 +29,9 @@ namespace Application.DataHandlers.DomæneDatahandler
             }
         }
 
-        public void Write()
+        internal override void Write()
         {
-            CheckIfFileExist(_filePath);
+            CheckIfFileExists(_filePath);
             List<Deviation> lines = (List<Deviation>)_deviationRepository.GetAll();
             foreach (Deviation deviation in lines)
             {

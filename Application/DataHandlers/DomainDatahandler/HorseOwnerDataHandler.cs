@@ -4,22 +4,15 @@ using System.Text;
 
 namespace Application.DataHandlers.DomæneDatahandler
 {
-    internal class HorseOwnerDataHandler
+    internal class HorseOwnerDataHandler: AbstractDataHandler
     {
 
         public HorseOwnerRepository _horseOwnerRepository = new HorseOwnerRepository();
         private static string _filePath = @"C:\HorseOwner.txt";
 
-        public void CheckIfFileExist(string FullPath)
+        internal override void Read()
         {
-            if (!File.Exists(FullPath))
-            {
-                FileStream fs = File.Create(FullPath);
-            }
-        }
-        public void Read()
-        {
-            CheckIfFileExist(_filePath);
+            CheckIfFileExists(_filePath);
 
             List<string> lines = File.ReadLines(_filePath).ToList();
             lines.RemoveAt(0);
@@ -35,9 +28,9 @@ namespace Application.DataHandlers.DomæneDatahandler
                 _horseOwnerRepository.Add(newOwner);
             }
         }
-        public void Write()
+        internal override void Write()
         {
-            CheckIfFileExist(_filePath);
+            CheckIfFileExists(_filePath);
             List<HorseOwner> lines = (List<HorseOwner>)_horseOwnerRepository.GetAll();
             foreach (HorseOwner horseOwner in lines)
             {

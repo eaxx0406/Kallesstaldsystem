@@ -4,21 +4,14 @@ using System.Text;
 
 namespace Application.DataHandlers.DomæneDatahandler
 {
-    internal class PaddockDatahandler
+    internal class PaddockDatahandler: AbstractDataHandler
     {
         public PaddockRepository _paddockRepository = new PaddockRepository();
         private static string _filePath = @"C:\Paddock.txt";
 
-        public void CheckIfFileExist(string FullPath)
+        internal override void Read()
         {
-            if (!File.Exists(FullPath))
-            {
-                FileStream fs = File.Create(FullPath);
-            }
-        }
-        public void Read()
-        {
-            CheckIfFileExist(_filePath);
+            CheckIfFileExists(_filePath);
 
             List<string> lines = File.ReadLines(_filePath).ToList();
             lines.RemoveAt(0);
@@ -35,9 +28,9 @@ namespace Application.DataHandlers.DomæneDatahandler
             }
         }
 
-        public void Write()
+        internal override void Write()
         {
-            CheckIfFileExist(_filePath);
+            CheckIfFileExists(_filePath);
             List<Paddock> lines = (List<Paddock>)_paddockRepository.GetAll();
             foreach (Paddock paddock in lines)
             {
