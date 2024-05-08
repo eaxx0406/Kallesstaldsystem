@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.DataHandlers
 {
-    internal abstract class AbstractDataHandler
+    public abstract class AbstractDataHandler
     {
         internal abstract void Read();
         internal abstract void Write();

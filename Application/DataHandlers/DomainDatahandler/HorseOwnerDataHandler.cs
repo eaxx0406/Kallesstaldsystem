@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Application.DataHandlers.DomæneDatahandler
 {
-    internal class HorseOwnerDataHandler: AbstractDataHandler
+    public class HorseOwnerDataHandler: AbstractDataHandler
     {
 
-        public HorseOwnerRepository _horseOwnerRepository = new HorseOwnerRepository();
+        public HorseOwnerRepository HorseOwnerRepository = new HorseOwnerRepository();
         private static string _filePath = @"C:\HorseOwner.txt";
 
         internal override void Read()
@@ -25,13 +25,13 @@ namespace Application.DataHandlers.DomæneDatahandler
                 string phone = values[2];
 
                 HorseOwner newOwner = new HorseOwner(id,name,phone);
-                _horseOwnerRepository.Add(newOwner);
+                HorseOwnerRepository.Add(newOwner);
             }
         }
         internal override void Write()
         {
             CheckIfFileExists(_filePath);
-            List<HorseOwner> lines = (List<HorseOwner>)_horseOwnerRepository.GetAll();
+            List<HorseOwner> lines = (List<HorseOwner>)HorseOwnerRepository.GetAll();
             foreach (HorseOwner horseOwner in lines)
             {
                 Console.OutputEncoding = Encoding.UTF8;

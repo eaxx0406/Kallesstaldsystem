@@ -22,12 +22,17 @@ namespace Application.Repostories
 
         public Horse GetById(int id)
         {
-            throw new NotImplementedException();
+            foreach (Horse entity in _horses)
+            {
+                if (entity.Id == id) { return entity; }
+            }
+            return null;
         }
 
         public void Update(Horse entity)
         {
             throw new NotImplementedException();
         }
-    }
+        
+    } 
 }

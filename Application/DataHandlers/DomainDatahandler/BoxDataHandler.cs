@@ -11,7 +11,7 @@ namespace Application.DataHandlers.DomæneDatahandler
 
         internal override void Read()
         {
-            base.CheckIfFileExists(_filePath);
+            CheckIfFileExists(_filePath);
 
             List<string> lines = File.ReadLines(_filePath).ToList();
             lines.RemoveAt(0);

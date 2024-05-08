@@ -8,8 +8,8 @@ namespace Application.DataHandlers
         private BoxDatahandler _boxDataHandler = new BoxDatahandler();
         private DeviationsDatahandler _deviationsDatahandler = new DeviationsDatahandler();
         private FeedingScheduelDataHandler _feedingScheduelDataHandler = new FeedingScheduelDataHandler();
-        private HorseDatahandler _horseDataHandler = new HorseDatahandler();
-        private HorseOwnerDataHandler _horseOwnerDataHandler = new HorseOwnerDataHandler();
+        public HorseDatahandler HorseDataHandler = new HorseDatahandler();
+        public HorseOwnerDataHandler HorseOwnerDataHandler = new HorseOwnerDataHandler();
         private PaddockDatahandler _paddockDatahandler = new PaddockDatahandler();
         private StableDatahandler _stableDatahandler = new StableDatahandler();
 
@@ -19,8 +19,8 @@ namespace Application.DataHandlers
             _boxDataHandler.Read();
             _deviationsDatahandler.Read();    
             _feedingScheduelDataHandler.Read();
-            _horseDataHandler.Read();
-            _horseOwnerDataHandler.Read();
+            HorseDataHandler.Read();
+            HorseOwnerDataHandler.Read();
             _paddockDatahandler.Read();
             _stableDatahandler.Read();
         }
@@ -29,8 +29,8 @@ namespace Application.DataHandlers
             _boxDataHandler.Write();
             _deviationsDatahandler.Write();
             _feedingScheduelDataHandler.Write();
-            _horseDataHandler.Write();
-            _horseOwnerDataHandler.Write();
+            HorseDataHandler.Write();
+            HorseOwnerDataHandler.Write();
             _paddockDatahandler.Write();
         }
 

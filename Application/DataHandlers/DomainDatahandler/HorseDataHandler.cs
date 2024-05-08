@@ -5,7 +5,7 @@ using static Kallesstaldsystem.Model.Horse;
 
 namespace Application.DataHandlers.DomæneDatahandler
 {
-    internal class HorseDatahandler: AbstractDataHandler
+    public class HorseDatahandler: AbstractDataHandler
     {
         public HorseRepository _horseRepository = new HorseRepository();
         private static string _filePath = @"C:\Horses.txt";

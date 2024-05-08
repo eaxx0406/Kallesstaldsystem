@@ -3,7 +3,7 @@ using Kallesstaldsystem.Model;
 
 namespace Application.Repositories
 {
-    internal class HorseOwnerRepository : IRepository<HorseOwner>
+    public class HorseOwnerRepository : IRepository<HorseOwner>
     {
         public void Add(HorseOwner entity)
         {
