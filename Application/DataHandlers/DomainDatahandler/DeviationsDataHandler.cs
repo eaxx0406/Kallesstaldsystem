@@ -2,14 +2,14 @@
 using Kallesstaldsystem.Model;
 using System.Text;
 
-namespace Application.DataHandlers.DomæneDatahandler
+namespace Application.DataHandlers.DomaineDatahandler
 {
-    internal class DeviationsDatahandler: AbstractDataHandler
+    internal class DeviationsDatahandler: AbstractDataHandler<DeviationRepository>
     {
         public DeviationRepository _deviationRepository = new DeviationRepository();
         private static string _filePath = @"C:\deviation.txt";
 
-        internal override void Read()
+        internal override DeviationRepository Read()
         {
            CheckIfFileExists(_filePath);
 
@@ -27,9 +27,10 @@ namespace Application.DataHandlers.DomæneDatahandler
                 Deviation deviation = new Deviation(id, description,start,end);
                 _deviationRepository.Add(deviation);
             }
+            return _deviationRepository;
         }
 
-        internal override void Write()
+        internal override void Write(DeviationRepository deviationRepository)
         {
             CheckIfFileExists(_filePath);
             List<Deviation> lines = (List<Deviation>)_deviationRepository.GetAll();

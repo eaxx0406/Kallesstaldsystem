@@ -1,16 +1,16 @@
-﻿using Application.Repostories;
+﻿using Application.Repositories;
 using Kallesstaldsystem.Model;
 using System.Text;
 using static Kallesstaldsystem.Model.Horse;
 
-namespace Application.DataHandlers.DomæneDatahandler
+namespace Application.DataHandlers.DomaineDatahandler
 {
-    public class HorseDatahandler: AbstractDataHandler
+    public class HorseDatahandler: AbstractDataHandler<HorseRepository>
     {
-        public HorseRepository _horseRepository = new HorseRepository();
+        private HorseRepository _horseRepository = new HorseRepository();
         private static string _filePath = @"C:\Horses.txt";
 
-        internal override void Read()
+        internal override HorseRepository Read()
         {
             CheckIfFileExists(_filePath);
 
@@ -33,16 +33,17 @@ namespace Application.DataHandlers.DomæneDatahandler
                 Horse horse = new Horse(id, name, chrId, type, gender);
                 _horseRepository.Add(horse);
             }
+            return _horseRepository;
         }
-        internal override void Write()
+        internal override void Write(HorseRepository repository)
         {
             CheckIfFileExists(_filePath);
-            List<Horse> lines = (List<Horse>)_horseRepository.GetAll();
+            List<Horse> lines = repository.GetAll().ToList();
             foreach (Horse horse in lines)
             {
                 Console.OutputEncoding = Encoding.UTF8;
-                string createText = $"\"{horse.Id}\"    \"{horse.Name}\"    \"{horse.CHRId}\"    \"{horse.HorseType}\"   \"{horse.HorseGender}\"  \"{horse.PaddockId}\"   \"{horse.OwnerId}\" \"{horse.BoxId}\"   \"{horse.FeedingScheduelId}\"";
-                File.AppendAllText(_filePath, Environment.NewLine + createText);
+                string createText = $"{horse.Id}\t{horse.Name}\t{horse.CHRId}\t{horse.HorseType}\t{horse.HorseGender}\t{horse.PaddockId}\t{horse.OwnerId}\t{horse.BoxId}\t{horse.FeedingScheduelId}";
+                File.AppendAllText(_filePath, createText + Environment.NewLine);
             }
         }
     }

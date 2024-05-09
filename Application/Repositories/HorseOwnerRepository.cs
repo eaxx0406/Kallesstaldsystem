@@ -1,4 +1,4 @@
-﻿using Application.Repostories;
+﻿using Application.Repositories;
 using Kallesstaldsystem.Model;
 
 namespace Application.Repositories

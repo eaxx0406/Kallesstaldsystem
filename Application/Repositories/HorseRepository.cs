@@ -1,6 +1,6 @@
 ﻿using Kallesstaldsystem.Model;
 
-namespace Application.Repostories
+namespace Application.Repositories
 {
     public class HorseRepository : IRepository<Horse>
     {
@@ -32,7 +32,16 @@ namespace Application.Repostories
 
         public void Update(Horse entity)
         {
-            throw new NotImplementedException();
+            Horse horse = GetById(entity.Id);
+
+            horse.Name = entity.Name;
+            horse.CHRId = entity.CHRId;
+            horse.HorseType = entity.HorseType;
+            horse.HorseGender = entity.HorseGender;
+            horse.PaddockId = entity.PaddockId;
+            horse.OwnerId = entity.OwnerId;
+            horse.BoxId = entity.BoxId;
+            horse.FeedingScheduelId = entity.FeedingScheduelId;
         }
         
     } 

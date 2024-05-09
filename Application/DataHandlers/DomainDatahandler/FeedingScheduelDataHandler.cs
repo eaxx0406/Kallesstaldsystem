@@ -2,15 +2,15 @@
 using Kallesstaldsystem.Model;
 using System.Text;
 
-namespace Application.DataHandlers.DomæneDatahandler
+namespace Application.DataHandlers.DomaineDatahandler
 {
-    internal class FeedingScheduelDataHandler: AbstractDataHandler
+    internal class FeedingScheduelDataHandler: AbstractDataHandler<FeedingScheduelRepository>
     {
         public FeedingScheduelRepository _feedingScheduelsRepository = new FeedingScheduelRepository();
         private static string _filePath = @"C:\feedingscheduel.txt";
 
        
-        internal override void Read()
+        internal override FeedingScheduelRepository Read()
         {
             CheckIfFileExists(_filePath);
 
@@ -28,16 +28,17 @@ namespace Application.DataHandlers.DomæneDatahandler
                 FeedingScheduel feedingScheduel = new FeedingScheduel(id,morning,noon,evening);
                 _feedingScheduelsRepository.Add(feedingScheduel);
             }
+            return _feedingScheduelsRepository;
         }
-        internal override void Write()
+        internal override void Write(FeedingScheduelRepository feedingScheduelRepository)
         {
             CheckIfFileExists(_filePath);
             List<FeedingScheduel> lines = (List<FeedingScheduel>)_feedingScheduelsRepository.GetAll();
             foreach (FeedingScheduel feedingScheduel in lines)
             {
                 Console.OutputEncoding = Encoding.UTF8;
-                string createText = $"\"{feedingScheduel.Id}\"    \"{feedingScheduel.Morning}\"    \"{feedingScheduel.Noon}\"   \"{feedingScheduel.Evening}\"";
-                File.AppendAllText(_filePath, Environment.NewLine + createText);
+                string createText = $"{feedingScheduel.Id}\t{feedingScheduel.Morning}\t{feedingScheduel.Noon}\t{feedingScheduel.Evening}";
+                File.AppendAllText(_filePath, createText + Environment.NewLine);
             }
         }
     }

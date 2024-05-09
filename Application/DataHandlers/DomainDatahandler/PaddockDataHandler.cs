@@ -2,14 +2,14 @@
 using Kallesstaldsystem.Model;
 using System.Text;
 
-namespace Application.DataHandlers.DomæneDatahandler
+namespace Application.DataHandlers.DomaineDatahandler
 {
-    internal class PaddockDatahandler: AbstractDataHandler
+    internal class PaddockDatahandler: AbstractDataHandler<PaddockRepository>
     {
         public PaddockRepository _paddockRepository = new PaddockRepository();
         private static string _filePath = @"C:\Paddock.txt";
 
-        internal override void Read()
+        internal override PaddockRepository Read()
         {
             CheckIfFileExists(_filePath);
 
@@ -26,9 +26,10 @@ namespace Application.DataHandlers.DomæneDatahandler
                 Paddock newPaddock = new Paddock(id, name, leased);
                 _paddockRepository.Add(newPaddock);
             }
+            return _paddockRepository;
         }
 
-        internal override void Write()
+        internal override void Write(PaddockRepository paddockRepository)
         {
             CheckIfFileExists(_filePath);
             List<Paddock> lines = (List<Paddock>)_paddockRepository.GetAll();

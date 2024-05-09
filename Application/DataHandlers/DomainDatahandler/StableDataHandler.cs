@@ -1,16 +1,16 @@
 ﻿using Application.Repositories;
 using Kallesstaldsystem.Model;
 
-namespace Application.DataHandlers.DomæneDatahandler
+namespace Application.DataHandlers.DomaineDatahandler
 {
-    internal class StableDatahandler : AbstractDataHandler
+    internal class StableDatahandler : AbstractDataHandler<StableRepository>
     {
         public StableRepository _stableRepository = new StableRepository();
         private static string _filePath = @"C:\stable.txt";
 
      
 
-        internal override void Read()
+        internal override StableRepository Read()
         {
             CheckIfFileExists(_filePath);
 
@@ -26,9 +26,10 @@ namespace Application.DataHandlers.DomæneDatahandler
                 Stable stable = new Stable(id, name);
                 _stableRepository.Add(stable);
             }
+            return _stableRepository;
         }
 
-        internal override void Write()
+        internal override void Write(StableRepository stableRepository)
         {
             throw new NotImplementedException();
         }

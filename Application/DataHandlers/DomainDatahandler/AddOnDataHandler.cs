@@ -1,15 +1,15 @@
 ﻿using Application.Repositories;
 using Kallesstaldsystem.Model;
 
-namespace Application.DataHandlers.DomæneDatahandler
+namespace Application.DataHandlers.DomaineDatahandler
 {
-    internal class AddOnDataHandler: AbstractDataHandler
+    internal class AddOnDataHandler: AbstractDataHandler<AddOnRepository>
     {
         public AddOnRepository _addOnRepository = new AddOnRepository();
         private static string _filePath = @"C:\addon.txt";
 
         
-        internal override void Read()
+        internal override AddOnRepository Read()
         {
             CheckIfFileExists(_filePath);
 
@@ -25,9 +25,10 @@ namespace Application.DataHandlers.DomæneDatahandler
                 AddOn addOn = new AddOn(id, name);
                 _addOnRepository.Add(addOn);
             }
+            return _addOnRepository;
         }
 
-        internal override void Write()
+        internal override void Write(AddOnRepository repository)
         {
             throw new NotImplementedException();
         }

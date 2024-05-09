@@ -2,14 +2,14 @@
 using Kallesstaldsystem.Model;
 using System.Text;
 
-namespace Application.DataHandlers.DomæneDatahandler
+namespace Application.DataHandlers.DomaineDatahandler
 {
-    internal class BoxDatahandler: AbstractDataHandler
+    internal class BoxDatahandler: AbstractDataHandler <BoxRepository>
     {
         public BoxRepository _boxRepository = new BoxRepository();
         private static string _filePath = @"C:\box.txt";
 
-        internal override void Read()
+        internal override BoxRepository Read()
         {
             CheckIfFileExists(_filePath);
 
@@ -26,9 +26,10 @@ namespace Application.DataHandlers.DomæneDatahandler
                 Box box = new Box(id, name, leased);
                 _boxRepository.Add(box);
             }
+            return _boxRepository;
         }
 
-        internal override void Write()
+        internal override void Write(BoxRepository boxRepository)
         {
             CheckIfFileExists(_filePath);
             List<Box> lines = (List<Box>)_boxRepository.GetAll();

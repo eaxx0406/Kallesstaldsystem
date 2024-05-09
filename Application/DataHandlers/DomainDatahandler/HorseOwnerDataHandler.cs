@@ -2,15 +2,15 @@
 using Kallesstaldsystem.Model;
 using System.Text;
 
-namespace Application.DataHandlers.DomæneDatahandler
+namespace Application.DataHandlers.DomaineDatahandler
 {
-    public class HorseOwnerDataHandler: AbstractDataHandler
+    public class HorseOwnerDataHandler: AbstractDataHandler<HorseOwnerRepository>
     {
 
-        public HorseOwnerRepository HorseOwnerRepository = new HorseOwnerRepository();
+        private HorseOwnerRepository _horseOwnerRepository = new HorseOwnerRepository();
         private static string _filePath = @"C:\HorseOwner.txt";
 
-        internal override void Read()
+        internal override HorseOwnerRepository Read()
         {
             CheckIfFileExists(_filePath);
 
@@ -25,18 +25,19 @@ namespace Application.DataHandlers.DomæneDatahandler
                 string phone = values[2];
 
                 HorseOwner newOwner = new HorseOwner(id,name,phone);
-                HorseOwnerRepository.Add(newOwner);
+                _horseOwnerRepository.Add(newOwner);
             }
+            return _horseOwnerRepository;
         }
-        internal override void Write()
+        internal override void Write(HorseOwnerRepository horseOwnerRepository)
         {
             CheckIfFileExists(_filePath);
-            List<HorseOwner> lines = (List<HorseOwner>)HorseOwnerRepository.GetAll();
+            List<HorseOwner> lines = (List<HorseOwner>)_horseOwnerRepository.GetAll();
             foreach (HorseOwner horseOwner in lines)
             {
                 Console.OutputEncoding = Encoding.UTF8;
-                string createText = $"\"{horseOwner.Id}\"    \"{horseOwner.Name}\"    \"{horseOwner.Phone}\"";
-                File.AppendAllText(_filePath, Environment.NewLine + createText);
+                string createText = $"{horseOwner.Id}\t{horseOwner.Name}\t{horseOwner.Phone}";
+                File.AppendAllText(_filePath, createText + Environment.NewLine);
             }
         }
     }

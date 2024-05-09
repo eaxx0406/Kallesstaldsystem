@@ -1,43 +1,76 @@
 using Kallesstaldsystem.Model;
 using Application.DataHandlers;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel.DataCollection;
+using static Kallesstaldsystem.Model.Horse;
 
-namespace DataHandlerTestHorseOwner
+namespace DataHandlerTests
 {
     [TestClass]
-    public class DataHandlerTestHorse
+    public class HorseDataHandlerTests
     {
-        Horse T1, T2;
 
-        MasterDataHandler datahandler = new MasterDataHandler();
-        Horse Test1 = new Horse(1, "Test1", "123NF456", Horse.EquineType.Pony, Horse.Gender.Mare);
-        Horse Test2 = new Horse(2, "Test2", "123DV456", Horse.EquineType.Horse, Horse.Gender.Stallion);
-        
+        private Horse testHorse1 = new Horse(1, "Test1", "123NF456", EquineType.Pony, Gender.Mare);
+        private Horse testHorse2 = new Horse(2, "Test2", "123DV456", EquineType.Horse, Gender.Stallion);
 
-        [TestMethod]
-        public void GetTest1Horse()
+
+        [TestInitialize]
+        public void TestInitialize()
         {
-            //Arrange
-            datahandler.HorseDataHandler._horseRepository.Add(Test1);
-
-            //Act
-            Horse T1 = datahandler.HorseDataHandler._horseRepository.GetById(1);
-
-            //Assert
-            Assert.AreEqual("Hest: id: 1, Navn: Test1, CHRid: 123NF456, Type: Pony, Køn: Mare", T1.ToString());
+            DirectoryInfo directory = new DirectoryInfo("c:\\StableManagementSystem\\");
+            FileInfo[] files = directory.GetFiles();
+            foreach (FileInfo file in files)
+            {
+                file.Delete();
+            }
         }
 
         [TestMethod]
-        public void GetTest2Horse()
+        public void UpdateHorses()
         {
+
             //Arrange
-            datahandler.HorseDataHandler._horseRepository.Add(Test2);
+            MasterDataHandler datahandler = new MasterDataHandler();
+            datahandler.HorseRepository.Add(testHorse1);
 
             //Act
-            Horse T2 = datahandler.HorseDataHandler._horseRepository.GetById(2);
+            testHorse1.Name = "UpdatedName";
+
+            datahandler.Write();
+
+            datahandler = new MasterDataHandler();
+
+            Horse horse1 = datahandler.HorseRepository.GetById(1);
 
             //Assert
-            Assert.AreEqual("Hest: id: 2, Navn: Test2, CHRid: 123DV456, Type: Horse, Køn: Stallion", T2.ToString());
+            //Assert.AreEqual("Hest: id: 1, Navn: Test1, CHRid: 123NF456, Type: Pony, Køn: Mare", horse1.ToString());
+            Assert.AreEqual(testHorse1.Name, horse1.Name);
+
         }
+
+
+
+        [TestMethod]
+        public void WriteReadHorses()
+        {
+
+            //Arrange
+            MasterDataHandler datahandler = new MasterDataHandler();
+
+            datahandler.HorseRepository.Add(testHorse1);
+            datahandler.HorseRepository.Add(testHorse2);
+
+            //Act
+            datahandler.Write();
+            datahandler = new MasterDataHandler();
+
+            Horse horse1 = datahandler.HorseRepository.GetById(1);
+            Horse horse2 = datahandler.HorseRepository.GetById(2);
+
+            //Assert
+            //Assert.AreEqual("Hest: id: 1, Navn: Test1, CHRid: 123NF456, Type: Pony, Køn: Mare", horse1.ToString());
+            Assert.AreEqual(testHorse1.ToString(), horse1.ToString());
+            Assert.AreEqual(testHorse2.ToString(), horse2.ToString());
+
+        }
+
     }
 }

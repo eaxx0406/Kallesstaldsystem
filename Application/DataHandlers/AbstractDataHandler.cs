@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Application.DataHandlers
 {
-    public abstract class AbstractDataHandler
+    public abstract class AbstractDataHandler<TRepository>
     {
-        internal abstract void Read();
-        internal abstract void Write();
+        internal abstract TRepository Read();
+        internal abstract void Write(TRepository repository);
         protected void CheckIfFileExists(string fullPath)
         { 
             if (!File.Exists(fullPath))
             {
                 FileStream fs = File.Create(fullPath);
+                fs.Close();
             } 
         }
     }
