@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace Application.Controllers
 {
-    internal class BoxController : AbstractController<Box, BoxRepository>
+    internal class PaddockController : AbstractController<Paddock, PaddockRepository>
     {
-        internal BoxController() : base(_dataHandler.BoxRepository)
+        internal PaddockController() : base(_dataHandler.PaddockRepository)
         {
 
         }
     }
 }
-

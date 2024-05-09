@@ -23,6 +23,7 @@ namespace Application.DataHandlers
         internal HorseOwnerRepository HorseOwnerRepository { get; private set; } = new HorseOwnerRepository();
         internal PaddockRepository PaddockRepository { get; private set; } = new PaddockRepository();
         internal StableRepository StableRepository { get; private set; } = new StableRepository();
+        internal DeviationRepository DeviationsRepository { get; set; }
 
         public MasterDataHandler()
         {

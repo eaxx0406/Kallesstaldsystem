@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace Application.Controllers
 {
-    internal class BoxController : AbstractController<Box, BoxRepository>
+    internal class HorseOwnerController : AbstractController<HorseOwner, HorseOwnerRepository>
     {
-        internal BoxController() : base(_dataHandler.BoxRepository)
+        internal HorseOwnerController() : base(_dataHandler.HorseOwnerRepository)
         {
 
         }
     }
 }
-

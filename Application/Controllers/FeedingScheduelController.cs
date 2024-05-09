@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace Application.Controllers
 {
-    internal class BoxController : AbstractController<Box, BoxRepository>
+    internal class FeedingScheduelController: AbstractController <FeedingScheduel, FeedingScheduelRepository>
     {
-        internal BoxController() : base(_dataHandler.BoxRepository)
+        internal FeedingScheduelController() : base(_dataHandler.FeedingScheduelRepository)
         {
 
         }
     }
 }
-
