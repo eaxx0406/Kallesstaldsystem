@@ -1,4 +1,5 @@
-﻿using Kallesstaldsystem.Model;
+﻿using Application.Repositories;
+using Kallesstaldsystem.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,26 +8,25 @@ using System.Threading.Tasks;
 
 namespace Application.Controllers
 {
-    internal class HorseController: AbstractController
+    internal class HorseController: AbstractController<Horse>
     {
-
-        public void AddHorse(Horse horse)
+        internal override void Add(Horse horse)
         {
-            _dataHandler.HorseRepository.Add(horse);
+           _dataHandler.HorseRepository.Add(horse);
             _dataHandler.Write();
         }
-
-        public Horse GetHorse(int id)
+        
+        internal override Horse Get(int id)
         {
             Horse horse = _dataHandler.HorseRepository.GetById(id);
             if (horse == null) { throw new Exception("Horse not found"); }
             return horse;
         }
-        public List<Horse> GetAllHorses() 
+        internal override List<Horse> GetAll() 
         { 
             return _dataHandler.HorseRepository.GetAll().ToList();
         }
-        public void RemoveHorse(int id)
+        internal override void Remove(int id)
         {
             Horse horse = _dataHandler.HorseRepository.GetById(id);
             if (horse == null) { throw new Exception("Horse not found"); }
@@ -34,7 +34,7 @@ namespace Application.Controllers
             _dataHandler.Write();     
         }
 
-        public void UpdateHorse(Horse horse)
+        internal override void Update(Horse horse)
         {
             _dataHandler.HorseRepository.Update(horse);
             _dataHandler.Write();   

@@ -5,6 +5,7 @@ namespace Application.DataHandlers
 {
     public class MasterDataHandler
     {
+        internal readonly object repository;
         private AddOnDataHandler _addOnDataHandler = new AddOnDataHandler();
         private BoxDatahandler _boxDataHandler = new BoxDatahandler();
         private DeviationsDatahandler _deviationsDatahandler = new DeviationsDatahandler();
