@@ -8,18 +8,22 @@ namespace Application.Repositories
 
         public void Add(Horse horse)
         {
+            int maxId = 0;
+            if (_horses.Count > 0) maxId = _horses.Max(h => h.Id);
+            horse.Id = maxId + 1;
             _horses.Add(horse);
         }
 
         public void Remove(Horse entity)
         {
-            throw new NotImplementedException();
+            _horses.Remove(entity);
         }
 
         public IEnumerable<Horse> GetAll()
         {
-            throw new NotImplementedException();
+            return _horses;
         }
+
 
         public Horse GetById(int id)
         {
