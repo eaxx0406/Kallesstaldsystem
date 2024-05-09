@@ -53,6 +53,15 @@ namespace Kallesstaldsystem.Model
 
         }
 
+        //create contructors for the enums
+        public Horse(string name, string cHRId, EquineType type, Gender gender)
+        {
+            Name = name;
+            CHRId = cHRId;
+            HorseType = type;
+            HorseGender = gender;
+        }
+
         public enum EquineType
         {
             Pony,
@@ -64,6 +73,7 @@ namespace Kallesstaldsystem.Model
             Gelding,
             Stallion
         }
+
         public override string ToString()
         {
             return "Hest: id: " + Id + ", Navn: " + Name + ", CHRid: " + CHRId + ", Type: " + HorseType + ", Køn: " + HorseGender ;

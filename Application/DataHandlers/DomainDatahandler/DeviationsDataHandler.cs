@@ -7,7 +7,7 @@ namespace Application.DataHandlers.DomaineDatahandler
     internal class DeviationsDatahandler: AbstractDataHandler<DeviationRepository>
     {
         public DeviationRepository _deviationRepository = new DeviationRepository();
-        private static string _filePath = @"C:\deviation.txt";
+        private static string _filePath = @"C:\\StableManagementSystem\\deviation.txt";
 
         internal override DeviationRepository Read()
         {

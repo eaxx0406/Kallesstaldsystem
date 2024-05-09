@@ -9,7 +9,7 @@ namespace Application.Controllers
 {
     public abstract class AbstractController <TModel> 
     {
-        protected static MasterDataHandler _dataHandler = new MasterDataHandler();
+        internal static MasterDataHandler _dataHandler = new MasterDataHandler();
 
 
         internal abstract void Add(TModel model);

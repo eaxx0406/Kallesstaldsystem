@@ -7,7 +7,7 @@ namespace Application.DataHandlers.DomaineDatahandler
     internal class BoxDatahandler: AbstractDataHandler <BoxRepository>
     {
         public BoxRepository _boxRepository = new BoxRepository();
-        private static string _filePath = @"C:\box.txt";
+        private static string _filePath = @"C:\\StableManagementSystem\\box.txt";
 
         internal override BoxRepository Read()
         {

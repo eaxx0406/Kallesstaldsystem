@@ -8,7 +8,7 @@ namespace Application.DataHandlers.DomaineDatahandler
     public class HorseDatahandler: AbstractDataHandler<HorseRepository>
     {
         private HorseRepository _horseRepository = new HorseRepository();
-        private static string _filePath = @"C:\Horses.txt";
+        private static string _filePath = @"C:\\StableManagementSystem\\Horses.txt";
 
         internal override HorseRepository Read()
         {

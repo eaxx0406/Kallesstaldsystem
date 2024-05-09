@@ -8,7 +8,7 @@ namespace Application.DataHandlers.DomaineDatahandler
     {
 
         private HorseOwnerRepository _horseOwnerRepository = new HorseOwnerRepository();
-        private static string _filePath = @"C:\HorseOwner.txt";
+        private static string _filePath = @"C:\\StableManagementSystem\\HorseOwner.txt";
 
         internal override HorseOwnerRepository Read()
         {

@@ -6,7 +6,7 @@ namespace Application.DataHandlers.DomaineDatahandler
     internal class StableDatahandler : AbstractDataHandler<StableRepository>
     {
         public StableRepository _stableRepository = new StableRepository();
-        private static string _filePath = @"C:\stable.txt";
+        private static string _filePath = @"C:\\StableManagementSystem\\stable.txt";
 
      
 
