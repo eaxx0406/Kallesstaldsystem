@@ -23,9 +23,13 @@ namespace Application.DataHandlers
         internal HorseOwnerRepository HorseOwnerRepository { get; private set; } = new HorseOwnerRepository();
         internal PaddockRepository PaddockRepository { get; private set; } = new PaddockRepository();
         internal StableRepository StableRepository { get; private set; } = new StableRepository();
-        
 
-        public void Read()
+        public MasterDataHandler()
+        {
+            Read();
+        }
+
+        private void Read()
         {
             //AddOnRepository = _addOnDataHandler.Read();
             //BoxRepository = _boxDataHandler.Read();

@@ -14,7 +14,7 @@ namespace Application.DataHandlers.DomaineDatahandler
             CheckIfFileExists(_filePath);
 
             List<string> lines = File.ReadLines(_filePath).ToList();
-            lines.RemoveAt(0);
+            //lines.RemoveAt(0);
             foreach (string line in lines)
             {
                 string[] values = line.Split('\t');
