@@ -1,4 +1,6 @@
 ﻿using Application.DataHandlers;
+using Application.Repositories;
+using Kallesstaldsystem.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,18 +9,44 @@ using System.Threading.Tasks;
 
 namespace Application.Controllers
 {
-    public abstract class AbstractController <TModel> 
+    public abstract class AbstractController <TModel, TRepository> where TModel : class where TRepository : IRepository<TModel>
     {
         internal static MasterDataHandler _dataHandler = new MasterDataHandler();
+        private TRepository _repository;
 
+        protected AbstractController(TRepository repository)
+        {
+            _repository = repository;
+        }
+        internal virtual void Add(TModel model)
+        {
+            _repository.Add(model);
+            _dataHandler.Write();
+        }
+        internal virtual TModel Get(int id)
+        {
+            TModel model = _repository.GetById(id);
+            if (model == null) { throw new Exception("Item not found"); }
+            return model;
+        }
+        internal virtual List<TModel> GetAll()
+        {
+            return _repository.GetAll().ToList();
+        }
 
-        internal abstract void Add(TModel model);
-        internal abstract TModel Get(int id);
-        internal abstract List<TModel> GetAll();
+        internal virtual void Remove(int id)
+        {
+            TModel model = _repository.GetById(id);
+            if (model == null) { throw new Exception("Item not found"); }
+            _repository.Remove(model);
+            _dataHandler.Write();
+        }
 
-        internal abstract void Remove(int id);
-
-        internal abstract void Update(TModel model);
+        internal virtual void Update(TModel model)
+        {
+            _repository.Update(model);
+            _dataHandler.Write();
+        }
 
     }
 }

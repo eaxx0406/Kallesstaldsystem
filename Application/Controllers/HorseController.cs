@@ -8,36 +8,11 @@ using System.Threading.Tasks;
 
 namespace Application.Controllers
 {
-    internal class HorseController: AbstractController<Horse>
+    internal class HorseController : AbstractController<Horse, HorseRepository>
     {
-        internal override void Add(Horse horse)
+        internal HorseController() : base(_dataHandler.HorseRepository)
         {
-           _dataHandler.HorseRepository.Add(horse);
-            _dataHandler.Write();
-        }
-        
-        internal override Horse Get(int id)
-        {
-            Horse horse = _dataHandler.HorseRepository.GetById(id);
-            if (horse == null) { throw new Exception("Horse not found"); }
-            return horse;
-        }
-        internal override List<Horse> GetAll() 
-        { 
-            return _dataHandler.HorseRepository.GetAll().ToList();
-        }
-        internal override void Remove(int id)
-        {
-            Horse horse = _dataHandler.HorseRepository.GetById(id);
-            if (horse == null) { throw new Exception("Horse not found"); }
-            _dataHandler.HorseRepository.Remove(horse);
-            _dataHandler.Write();     
-        }
 
-        internal override void Update(Horse horse)
-        {
-            _dataHandler.HorseRepository.Update(horse);
-            _dataHandler.Write();   
         }
-    }
+    }  
 }

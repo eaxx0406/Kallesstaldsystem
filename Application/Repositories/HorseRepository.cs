@@ -36,16 +36,10 @@ namespace Application.Repositories
 
         public void Update(Horse entity)
         {
-            Horse horse = GetById(entity.Id);
+            int index = _horses.FindIndex(e => e.Id == entity.Id);
 
-            horse.Name = entity.Name;
-            horse.CHRId = entity.CHRId;
-            horse.HorseType = entity.HorseType;
-            horse.HorseGender = entity.HorseGender;
-            horse.PaddockId = entity.PaddockId;
-            horse.OwnerId = entity.OwnerId;
-            horse.BoxId = entity.BoxId;
-            horse.FeedingScheduelId = entity.FeedingScheduelId;
+            _horses[index] = entity;
+
         }
         
     } 
