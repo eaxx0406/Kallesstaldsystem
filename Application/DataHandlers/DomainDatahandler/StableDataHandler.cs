@@ -1,5 +1,6 @@
 ﻿using Application.Repositories;
 using Kallesstaldsystem.Model;
+using System.Text;
 
 namespace Application.DataHandlers.DomaineDatahandler
 {
@@ -31,7 +32,14 @@ namespace Application.DataHandlers.DomaineDatahandler
 
         internal override void Write(StableRepository stableRepository)
         {
-            throw new NotImplementedException();
+            CheckIfFileExists(_filePath);
+            List<Stable> lines = (List<Stable>)_stableRepository.GetAll();
+            foreach (Stable stable in lines)
+            {
+                Console.OutputEncoding = Encoding.UTF8;
+                string createText = $"{stable.Id}\t{stable.Name}";
+                File.AppendAllText(_filePath, createText + Environment.NewLine);
+            }
         }
     }
 }

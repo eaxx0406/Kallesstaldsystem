@@ -1,5 +1,6 @@
 ﻿using Application.Repositories;
 using Kallesstaldsystem.Model;
+using System.Text;
 
 namespace Application.DataHandlers.DomaineDatahandler
 {
@@ -30,7 +31,14 @@ namespace Application.DataHandlers.DomaineDatahandler
 
         internal override void Write(AddOnRepository repository)
         {
-            throw new NotImplementedException();
+            CheckIfFileExists(_filePath);
+            List<AddOn> lines = (List<AddOn>)_addOnRepository.GetAll();
+            foreach (AddOn addOn in lines)
+            {
+                Console.OutputEncoding = Encoding.UTF8;
+                string createText = $"{addOn.Id}\t{addOn.Name}";
+                File.AppendAllText(_filePath, createText + Environment.NewLine);
+            }
         }
     }
 }

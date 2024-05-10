@@ -7,6 +7,22 @@ namespace Application.Repositories
     {
         private List<AddOn> _addons { get; set; } = new List<AddOn>();
 
+        public AddOnRepository() 
+        {
+            //mangler lige en oversættelse//TODO
+            AddOn indlukHverdage = new AddOn(1, "Indluk i hverdage ");
+            AddOn udlukWeekend = new AddOn(2, "Udluk i weekenden");
+            AddOn indlukWeekend = new AddOn(3,"Indluk i weekend");
+            AddOn klokkerPå = new AddOn(4, "Klokker på");
+            AddOn klokkerAf = new AddOn(5, "Klokker af");
+
+            _addons.Add(indlukHverdage);
+            _addons.Add(udlukWeekend);
+            _addons.Add(indlukWeekend);
+            _addons.Add(klokkerPå);
+            _addons.Add(klokkerAf);
+        }
+
         public void Add(AddOn entity)
         {
             int maxId = 0;
@@ -33,8 +49,6 @@ namespace Application.Repositories
         {
             return _addons;
         }
-
-
 
         public void Update(AddOn entity)
         {
