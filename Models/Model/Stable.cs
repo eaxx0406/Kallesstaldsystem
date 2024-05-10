@@ -19,5 +19,9 @@ namespace Kallesstaldsystem.Model
             Id = id;
             Name = name;
         } 
+        public Stable(string name)
+        {
+            Name = name;
+        }
     }
 }

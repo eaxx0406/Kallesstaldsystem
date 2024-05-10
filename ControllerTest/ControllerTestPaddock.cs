@@ -24,7 +24,7 @@ namespace ControllerTests
             {
                 file.Delete();
             }
-            HorseController._dataHandler = new MasterDataHandler();
+            PaddockController._dataHandler = new MasterDataHandler();
         }
 
 

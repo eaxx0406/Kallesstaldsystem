@@ -19,7 +19,13 @@ namespace Kallesstaldsystem.Model
             Description = description;
             Startdate = start;
             Enddate = end;
+        }
 
+        public Deviation(string description, DateTime start, DateTime end) 
+        {
+            Description = description;
+            Startdate = start;
+            Enddate = end;
         }
     }
 }

@@ -5,7 +5,8 @@ namespace Application.Repositories
 {
     internal class DeviationRepository : IRepository<Deviation>
     {
-        private List<Deviation> _deviations = new List<Deviation>();
+        private List<Deviation> _deviations { get; set; } = new List<Deviation>();
+
         public void Add(Deviation entity)
         {
             int maxId = 0;

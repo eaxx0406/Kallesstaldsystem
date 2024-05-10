@@ -16,5 +16,10 @@ namespace Kallesstaldsystem.Model
             Id = id;
             Name = name;
         }
+
+        public AddOn(string name) 
+        {
+            Name = name;
+        }
     }
 }

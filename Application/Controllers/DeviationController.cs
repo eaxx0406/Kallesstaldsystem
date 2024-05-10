@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Application.Controllers
 {
-    internal class DeviationsController : AbstractController<Deviation, DeviationRepository>
+    internal class DeviationController : AbstractController<Deviation, DeviationRepository>
     {
-        internal DeviationsController() : base(_dataHandler.DeviationsRepository)
+        internal DeviationController() : base(_dataHandler.DeviationsRepository)
         {
 
         }
