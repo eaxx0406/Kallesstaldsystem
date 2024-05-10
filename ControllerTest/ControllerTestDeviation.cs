@@ -1,10 +1,7 @@
 using Kallesstaldsystem.Model;
-using Application;
-using System.ComponentModel.DataAnnotations;
 using Application.Controllers;
 using Application.DataHandlers;
-using System.Reflection;
-using static Kallesstaldsystem.Model.Deviation;
+using Application.Repositories;
 
 namespace ControllerTests
 {
@@ -27,12 +24,12 @@ namespace ControllerTests
             DeviationController._dataHandler = new MasterDataHandler();
         }
 
-
         [TestMethod]
         public void TestAddDeviation()
         {
             DeviationController controller = new DeviationController();
-            controller.Add(new Deviation("ControllerTest", DateTime.Now, DateTime.Now.AddDays(2)));
+            Deviation test = new Deviation("ControllerTest", DateTime.Now, DateTime.Now.AddDays(2));
+            controller.Add(test);
             Deviation deviation = controller.Get(1);
             Assert.AreEqual("ControllerTest", deviation.Description);
         }
@@ -69,6 +66,5 @@ namespace ControllerTests
             Deviation deviation = controller.Get(1);
             Assert.AreEqual("UpdatedTest", deviation.Description);
         }
-
     }
 }

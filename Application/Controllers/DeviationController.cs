@@ -10,9 +10,12 @@ namespace Application.Controllers
 {
     internal class DeviationController : AbstractController<Deviation, DeviationRepository>
     {
-        internal DeviationController() : base(_dataHandler.DeviationsRepository)
+        internal DeviationController() : base(_dataHandler.DeviationRepository)
         {
 
         }
     }
 }
+
+
+

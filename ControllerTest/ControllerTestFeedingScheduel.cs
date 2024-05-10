@@ -1,10 +1,6 @@
 using Kallesstaldsystem.Model;
-using Application;
-using System.ComponentModel.DataAnnotations;
 using Application.Controllers;
 using Application.DataHandlers;
-using System.Reflection;
-using static Kallesstaldsystem.Model.Horse;
 
 namespace ControllerTests
 {
