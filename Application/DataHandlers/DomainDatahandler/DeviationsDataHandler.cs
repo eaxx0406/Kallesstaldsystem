@@ -37,8 +37,8 @@ namespace Application.DataHandlers.DomaineDatahandler
             foreach (Deviation deviation in lines)
             {
                 Console.OutputEncoding = Encoding.UTF8;
-                string createText = $"\"{deviation.Id}\"    \"{deviation.Description}\"    \"{deviation.Startdate}\"     \"{deviation.Enddate}\"";
-                File.AppendAllText(_filePath, Environment.NewLine + createText);
+                string createText = $"{deviation.Id}\t{deviation.Description}\t{deviation.Startdate}\t{deviation.Enddate}";
+                File.AppendAllText(_filePath, createText + Environment.NewLine );
             }
         }
     }

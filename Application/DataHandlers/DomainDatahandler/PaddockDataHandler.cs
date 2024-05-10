@@ -36,8 +36,8 @@ namespace Application.DataHandlers.DomaineDatahandler
             foreach (Paddock paddock in lines)
             {
                 Console.OutputEncoding = Encoding.UTF8;
-                string createText = $"\"{paddock.Id}\"    \"{paddock.Name}\"    \"{paddock.Leased}\"";
-                File.AppendAllText(_filePath, Environment.NewLine + createText);
+                string createText = $"{paddock.Id}\t{paddock.Name}\t{paddock.Leased}";
+                File.AppendAllText(_filePath, createText + Environment.NewLine );
             }
         }
     }

@@ -5,29 +5,42 @@ namespace Application.Repositories
 {
     internal class PaddockRepository : IRepository<Paddock>
     {
+        private List<Paddock> _paddocks = new List<Paddock>();
         public void Add(Paddock entity)
         {
-            throw new NotImplementedException();
+            int maxId = 0;
+            if (_paddocks.Count > 0)
+                maxId = _paddocks.Max(b => b.Id);
+            entity.Id = maxId + 1;
+            _paddocks.Add(entity);
         }
 
         public void Remove(Paddock entity)
         {
-            throw new NotImplementedException();
+            _paddocks.Remove(entity);
         }
 
         public IEnumerable<Paddock> GetAll()
         {
-            throw new NotImplementedException();
+            return _paddocks;
         }
 
         public Paddock GetById(int id)
         {
-            throw new NotImplementedException();
+            {
+                foreach (Paddock paddock in _paddocks)
+                {
+                    if (paddock.Id == id) { return paddock; }
+                }
+                return null;
+            }
         }
 
         public void Update(Paddock entity)
         {
-            throw new NotImplementedException();
+            int index = _paddocks.FindIndex(e => e.Id == entity.Id);
+
+            _paddocks[index] = entity;
         }
     }
 }

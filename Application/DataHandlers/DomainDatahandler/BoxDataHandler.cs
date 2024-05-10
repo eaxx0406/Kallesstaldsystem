@@ -36,8 +36,8 @@ namespace Application.DataHandlers.DomaineDatahandler
             foreach (Box box in lines)
             {
                 Console.OutputEncoding = Encoding.UTF8;
-                string createText = $"\"{box.Id}\"    \"{box.Name}\"    \"{box.Leased}\"";
-                File.AppendAllText(_filePath, Environment.NewLine + createText);
+                string createText = $"{box.Id}\t{box.Name}\t{box.Leased}";
+                File.AppendAllText(_filePath, createText + Environment.NewLine );
             }
         }
     }

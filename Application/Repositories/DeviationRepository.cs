@@ -5,29 +5,40 @@ namespace Application.Repositories
 {
     internal class DeviationRepository : IRepository<Deviation>
     {
+        private List<Deviation> _deviations = new List<Deviation>();
         public void Add(Deviation entity)
         {
-            throw new NotImplementedException();
+            int maxId = 0;
+            if (_deviations.Count > 0)
+                maxId = _deviations.Max(b => b.Id);
+            entity.Id = maxId + 1;
+            _deviations.Add(entity);
         }
 
         public IEnumerable<Deviation> GetAll()
         {
-            throw new NotImplementedException();
+            return _deviations;
         }
 
         public Deviation GetById(int id)
         {
-            throw new NotImplementedException();
+            foreach (Deviation deviation in _deviations)
+            {
+                if (deviation.Id == id) { return deviation; }
+            }
+            return null;
         }
 
         public void Remove(Deviation entity)
         {
-            throw new NotImplementedException();
+            _deviations.Remove(entity);
         }
 
         public void Update(Deviation entity)
         {
-            throw new NotImplementedException();
+            int index = _deviations.FindIndex(e => e.Id == entity.Id);
+
+            _deviations[index] = entity;
         }
     }
 }

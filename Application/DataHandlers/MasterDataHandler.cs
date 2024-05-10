@@ -33,22 +33,23 @@ namespace Application.DataHandlers
         private void Read()
         {
             //AddOnRepository = _addOnDataHandler.Read();
-            //BoxRepository = _boxDataHandler.Read();
-            //DeviationRepository = _deviationsDatahandler.Read();    
-            //FeedingScheduelRepository = _feedingScheduelDataHandler.Read();
+            BoxRepository = _boxDataHandler.Read();
+            DeviationRepository = _deviationsDatahandler.Read();
+            FeedingScheduelRepository = _feedingScheduelDataHandler.Read();
             HorseRepository = _horseDataHandler.Read();
-            //HorseOwnerRepository = _horseOwnerDataHandler.Read();
-            //PaddockRepository = _paddockDatahandler.Read();
+            HorseOwnerRepository = _horseOwnerDataHandler.Read();
+            PaddockRepository = _paddockDatahandler.Read();
             //StableRepository = _stableDatahandler.Read();
         }
         public void Write()
         {
-            //_boxDataHandler.Write(BoxRepository);
-            //_deviationsDatahandler.Write(DeviationRepository);
-            //_feedingScheduelDataHandler.Write(FeedingScheduelRepository);
+
+            _boxDataHandler.Write(BoxRepository);
+            _deviationsDatahandler.Write(DeviationRepository);
+            _feedingScheduelDataHandler.Write(FeedingScheduelRepository);
             _horseDataHandler.Write(HorseRepository);
-            //_horseOwnerDataHandler.Write(HorseOwnerRepository);
-            //_paddockDatahandler.Write(PaddockRepository);
+            _horseOwnerDataHandler.Write(HorseOwnerRepository);
+            _paddockDatahandler.Write(PaddockRepository);
         }
 
 

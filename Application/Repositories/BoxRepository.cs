@@ -1,33 +1,47 @@
-﻿using Application.Repositories;
-using Kallesstaldsystem.Model;
+﻿using Kallesstaldsystem.Model;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Application.Repositories
 {
-    internal class BoxRepository : IRepository<Box>
+    public class BoxRepository : IRepository<Box>
     {
-        public void Add(Box entity)
+        private List<Box> _boxes { get; set; } = new List<Box>();
+
+        public void Add(Box box)
         {
-            throw new NotImplementedException();
+            int maxId = 0;
+            if (_boxes.Count > 0)
+                maxId = _boxes.Max(b => b.Id);
+            box.Id = maxId + 1;
+            _boxes.Add(box);
         }
 
         public void Remove(Box entity)
         {
-            throw new NotImplementedException();
+            _boxes.Remove(entity);
         }
 
         public IEnumerable<Box> GetAll()
         {
-            throw new NotImplementedException();
+            return _boxes;
         }
 
         public Box GetById(int id)
         {
-            throw new NotImplementedException();
+            foreach (Box box in _boxes)
+            {
+                if (box.Id == id) { return box; }
+            }
+            return null;
         }
 
         public void Update(Box entity)
         {
-            throw new NotImplementedException();
+
+            int index = _boxes.FindIndex(e => e.Id == entity.Id);
+
+            _boxes[index] = entity;
         }
     }
 }
