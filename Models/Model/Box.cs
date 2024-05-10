@@ -18,5 +18,11 @@ namespace Kallesstaldsystem.Model
             Name = name;
             Leased = leased;
         }
+
+        public Box(string name,bool leased) 
+        { 
+            Name = name;
+            Leased = leased;
+        }
     }
 }

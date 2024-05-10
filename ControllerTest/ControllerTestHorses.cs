@@ -9,7 +9,7 @@ using static Kallesstaldsystem.Model.Horse;
 namespace ControllerTests
 {
     [TestClass]
-    public class HorseControllerTests
+    public class ControllerTestsHorse
     {
 
         private Horse testHorse1 = new Horse(1, "Test1", "123NF456", EquineType.Pony, Gender.Mare);
