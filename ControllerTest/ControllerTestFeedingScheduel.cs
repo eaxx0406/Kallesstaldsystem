@@ -1,6 +1,6 @@
 using Kallesstaldsystem.Model;
-using Application.Controllers;
-using Application.DataHandlers;
+using ApplicationLayer.Controllers;
+using ApplicationLayer.DataHandlers;
 
 namespace ControllerTests
 {

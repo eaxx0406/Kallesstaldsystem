@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Application.Repositories
+namespace ApplicationLayer.Repositories
 {
     public class HorseOwnerRepository : IRepository<HorseOwner>
     {

@@ -1,7 +1,7 @@
-﻿using Application.DataHandlers.DomaineDatahandler;
-using Application.Repositories;
+﻿using ApplicationLayer.DataHandlers.DomaineDatahandler;
+using ApplicationLayer.Repositories;
 
-namespace Application.DataHandlers
+namespace ApplicationLayer.DataHandlers
 {
     public class MasterDataHandler
     {

@@ -1,7 +1,7 @@
-﻿using Application.Repositories;
+﻿using ApplicationLayer.Repositories;
 using Kallesstaldsystem.Model;
 
-namespace Application.Repositories
+namespace ApplicationLayer.Repositories
 {
     internal class PaddockRepository : IRepository<Paddock>
     {

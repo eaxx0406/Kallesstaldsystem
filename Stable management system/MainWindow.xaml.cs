@@ -1,13 +1,6 @@
-﻿using System.Text;
+﻿using ApplicationLayer.Viewmodels;
+using Stable_management_system.Pages;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace StableManagementSystem
 {
@@ -16,11 +9,20 @@ namespace StableManagementSystem
     /// </summary>
     public partial class MainWindow : Window
     {
+       
         public MainWindow()
         {
             InitializeComponent();
         }
 
-      
+        private void HorseOverviewButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Horseoverview();
+        }
+
+        private void PaddockOverviewButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new PaddockOverview();
+        }
     }
 }

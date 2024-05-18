@@ -1,8 +1,8 @@
 using Kallesstaldsystem.Model;
-using Application;
+using ApplicationLayer;
 using System.ComponentModel.DataAnnotations;
-using Application.Controllers;
-using Application.DataHandlers;
+using ApplicationLayer.Controllers;
+using ApplicationLayer.DataHandlers;
 using System.Reflection;
 using static Kallesstaldsystem.Model.Horse;
 

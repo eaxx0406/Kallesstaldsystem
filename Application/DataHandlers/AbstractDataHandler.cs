@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.DataHandlers
+namespace ApplicationLayer.DataHandlers
 {
     public abstract class AbstractDataHandler<TRepository>
     {

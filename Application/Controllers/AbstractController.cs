@@ -1,5 +1,5 @@
-﻿using Application.DataHandlers;
-using Application.Repositories;
+﻿using ApplicationLayer.DataHandlers;
+using ApplicationLayer.Repositories;
 using Kallesstaldsystem.Model;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Controllers
+namespace ApplicationLayer.Controllers
 {
     public abstract class AbstractController <TModel, TRepository> where TModel : class where TRepository : IRepository<TModel>
     {

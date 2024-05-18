@@ -1,8 +1,8 @@
-﻿using Application.Repositories;
+﻿using ApplicationLayer.Repositories;
 using Kallesstaldsystem.Model;
 using System.Text;
 
-namespace Application.DataHandlers.DomaineDatahandler
+namespace ApplicationLayer.DataHandlers.DomaineDatahandler
 {
     internal class FeedingScheduelDataHandler: AbstractDataHandler<FeedingScheduelRepository>
     {

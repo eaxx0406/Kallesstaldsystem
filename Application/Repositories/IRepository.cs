@@ -1,4 +1,4 @@
-﻿namespace Application.Repositories
+﻿namespace ApplicationLayer.Repositories
 {
     public interface IRepository<T> where T : class
     {

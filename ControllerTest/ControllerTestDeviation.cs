@@ -1,7 +1,7 @@
 using Kallesstaldsystem.Model;
-using Application.Controllers;
-using Application.DataHandlers;
-using Application.Repositories;
+using ApplicationLayer.Controllers;
+using ApplicationLayer.DataHandlers;
+using ApplicationLayer.Repositories;
 
 namespace ControllerTests
 {

@@ -1,9 +1,9 @@
-﻿using Application.Repositories;
+﻿using ApplicationLayer.Repositories;
 using Kallesstaldsystem.Model;
 using System.Text;
 using static Kallesstaldsystem.Model.Horse;
 
-namespace Application.DataHandlers.DomaineDatahandler
+namespace ApplicationLayer.DataHandlers.DomaineDatahandler
 {
     public class HorseDatahandler: AbstractDataHandler<HorseRepository>
     {

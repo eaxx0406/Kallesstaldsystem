@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows;
 
+
 namespace StableManagementSystem
 {
     /// <summary>
