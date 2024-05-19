@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StableManagementSystem", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataHandlerTests", "DataHandlerTests\DataHandlerTests.csproj", "{11DA74FB-7DDB-44E4-8F8A-2BD7706E3DFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerTests", "ControllerTest\ControllerTests.csproj", "{F8F35819-3860-48A6-BFD1-A9838776684C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControllerTests", "ControllerTest\ControllerTests.csproj", "{F8F35819-3860-48A6-BFD1-A9838776684C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

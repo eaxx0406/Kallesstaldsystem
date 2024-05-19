@@ -18,7 +18,7 @@ namespace ApplicationLayer.Controllers
         {
             _repository = repository;
         }
-        internal virtual void Add(TModel model)
+        public virtual void Add(TModel model)
         {
             _repository.Add(model);
             _dataHandler.Write();
@@ -29,12 +29,12 @@ namespace ApplicationLayer.Controllers
             if (model == null) { throw new Exception("Item not found"); }
             return model;
         }
-        internal virtual List<TModel> GetAll()
+        public virtual List<TModel> GetAll()
         {
             return _repository.GetAll().ToList();
         }
 
-        internal virtual void Remove(int id)
+        public virtual void Remove(int id)
         {
             TModel model = _repository.GetById(id);
             if (model == null) { throw new Exception("Item not found"); }

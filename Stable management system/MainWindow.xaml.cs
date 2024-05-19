@@ -1,5 +1,4 @@
-﻿using ApplicationLayer.Viewmodels;
-using Stable_management_system.Pages;
+﻿using Stable_management_system.Pages;
 using System.Windows;
 
 namespace StableManagementSystem

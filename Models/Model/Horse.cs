@@ -65,13 +65,15 @@ namespace Kallesstaldsystem.Model
         public enum EquineType
         {
             Pony,
-            Horse
+            Horse,
+            Unknown
         }
         public enum Gender
         {
             Mare,
             Gelding,
-            Stallion
+            Stallion,
+            Unknown
         }
 
         public override string ToString()

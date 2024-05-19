@@ -16,13 +16,19 @@
         </Grid.ColumnDefinitions>
 
 
-        <ListBox ItemsSource="{Binding Horses}" SelectedItem="{Binding SelectedHorse}" Margin="10,10,10,10">
+        <ListBox ItemsSource="{Binding Horses}" SelectedItem="{Binding SelectedHorse}" Margin="10,10,10,50">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding Name}"></Label>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Button Content=" Opret " Command="{Binding CreateHorseCMD}" CommandParameter="{Binding}" Height ="30" Width="50" Margin="10" />
+            <Button Content=" Slet " Command="{Binding DeleteHorseCMD}" CommandParameter="{Binding}" Height ="30"  Width="50" Margin="10"/>
+        </StackPanel>
+
+
 
         <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch"/>
         <StackPanel Grid.Column="2">

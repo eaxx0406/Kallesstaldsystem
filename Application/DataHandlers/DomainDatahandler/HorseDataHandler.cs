@@ -41,7 +41,7 @@ namespace ApplicationLayer.DataHandlers.DomaineDatahandler
             List<Horse> lines = repository.GetAll().ToList();
             foreach (Horse horse in lines)
             {
-                Console.OutputEncoding = Encoding.UTF8;
+                //Console.OutputEncoding = Encoding.UTF8;
                 string createText = $"{horse.Id}\t{horse.Name}\t{horse.CHRId}\t{horse.HorseType}\t{horse.HorseGender}\t{horse.PaddockId}\t{horse.OwnerId}\t{horse.BoxId}\t{horse.FeedingScheduelId}";
                 File.AppendAllText(_filePath, createText + Environment.NewLine);
             }
