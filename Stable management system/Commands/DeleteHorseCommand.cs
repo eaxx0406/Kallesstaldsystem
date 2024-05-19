@@ -28,7 +28,8 @@ namespace Stable_management_system.Commands
         {
             if (parameter is MainViewModel mvm)
             {
-                mvm.RemoveSelectedHorse();
+                int id = mvm.SelectedHorse.Id;
+                mvm.RemoveSelectedHorse(id);
             }
         }
     }
