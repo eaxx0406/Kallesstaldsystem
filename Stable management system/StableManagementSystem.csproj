@@ -10,7 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\Images\Horse.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Pages\Images\Horse.jpg" />
   </ItemGroup>
 
   <ItemGroup>

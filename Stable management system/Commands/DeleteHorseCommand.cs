@@ -14,7 +14,7 @@ namespace Stable_management_system.Commands
         public bool CanExecute(object? parameter)
         {
             bool result = true;
-            if (parameter is MainViewModel mvm)
+            if (parameter is HorseMainViewModel mvm)
             {
                 if (mvm.SelectedHorse == null)
                 {
@@ -26,7 +26,7 @@ namespace Stable_management_system.Commands
 
         public void Execute(object? parameter)
         {
-            if (parameter is MainViewModel mvm)
+            if (parameter is HorseMainViewModel mvm)
             {
                 int id = mvm.SelectedHorse.Id;
                 mvm.RemoveSelectedHorse(id);

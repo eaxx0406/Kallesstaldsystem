@@ -7,14 +7,14 @@ using System.Windows.Input;
 
 namespace Stable_management_system.ViewModels
 {
-    public class MainViewModel
+    public class HorseMainViewModel
     {
         private HorseController _horseController { get; set; }
         public ObservableCollection<Horse> Horses { get; set; } = new ObservableCollection<Horse>();
 
         public Horse SelectedHorse { get; set; }
 
-        public MainViewModel()
+        public HorseMainViewModel()
         {
             _horseController = new HorseController();
             LoadHorses();   

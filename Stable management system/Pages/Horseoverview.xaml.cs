@@ -22,7 +22,7 @@ namespace Stable_management_system.Pages
     /// </summary>
     public partial class Horseoverview : Page
     {
-        MainViewModel mvm = new MainViewModel();
+        HorseMainViewModel mvm = new HorseMainViewModel();
 
         public Horseoverview()
         {

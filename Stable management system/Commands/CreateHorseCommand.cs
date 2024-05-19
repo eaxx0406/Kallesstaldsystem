@@ -20,7 +20,7 @@ namespace Stable_management_system.Commands
 
         public void Execute(object? parameter)
         {
-            if (parameter is MainViewModel mvm)
+            if (parameter is HorseMainViewModel mvm)
             {
                 mvm.AddHorse(new Horse("not specified", "not specified", Horse.EquineType.Unknown, Horse.Gender.Unknown));
             }
