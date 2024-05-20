@@ -1,4 +1,5 @@
 ﻿using Stable_management_system.Pages;
+using Stable_management_system.ViewModels;
 using System.Windows;
 
 namespace StableManagementSystem
@@ -8,7 +9,7 @@ namespace StableManagementSystem
     /// </summary>
     public partial class MainWindow : Window
     {
-       
+      
         public MainWindow()
         {
             InitializeComponent();
@@ -19,9 +20,13 @@ namespace StableManagementSystem
             Main.Content = new Horseoverview();
         }
 
+
+
         private void PaddockOverviewButton_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new PaddockOverview();
         }
+
+
     }
 }

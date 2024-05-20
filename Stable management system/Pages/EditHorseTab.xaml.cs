@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Stable_management_system.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,29 +13,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Stable_management_system.ViewModels;
-
 
 namespace Stable_management_system.Pages
 {
     /// <summary>
-    /// Interaction logic for Horseoverview.xaml
+    /// Interaction logic for EditHorseTab.xaml
     /// </summary>
-  
-
-    public partial class Horseoverview : Page
+    public partial class EditHorseTab : Page
     {
-        HorseMainViewModel mvm = new HorseMainViewModel();
-        public Horseoverview()
+        public EditHorseTab(HorseMainViewModel mvm)
         {
             InitializeComponent();
             DataContext = mvm;
-            HorseFrame.Content = new HorseInfoTab(mvm);
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            HorseFrame.Content = new EditHorseTab(mvm);
         }
     }
 }

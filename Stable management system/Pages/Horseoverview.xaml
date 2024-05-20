@@ -31,72 +31,14 @@
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <Button Content=" Opret " Command="{Binding CreateHorseCMD}" CommandParameter="{Binding}" Height ="30" Width="50" />
             <Button Content=" Slet " Command="{Binding DeleteHorseCMD}" CommandParameter="{Binding}" Height ="30"  Width="50" Margin="10"/>
-            <Button Content=" Rediger " Command="{Binding UpdateHorseCMD}" CommandParameter="{Binding}" Height ="30"  Width="50" Margin="10"/>
+            <Button Content=" Rediger " Height ="30"  Width="50" Margin="10" Click="Button_Click"/>
         </StackPanel>
 
         <!-- Gridsplitter  -->
         <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch"/>
 
         <!-- trejde(venstre) kolonne der viser hesteInfo ydereligere inddelt i tre rækker -->
-        <Grid Grid.Column="2">
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition Height="30"></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition Height="30"></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <!-- Basal hesteinfo  -->
-            <StackPanel Grid.Row ="0" Orientation="Horizontal" Height="1200">
-                <Image Source="Images/Horse.jpg"  Height="100" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label>Navn</Label>
-                        <TextBox Width="100" Text="{Binding SelectedHorse.Name, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Right" ></TextBox>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label>CHR</Label>
-                        <TextBox Text="{Binding SelectedHorse.CHRId, UpdateSourceTrigger=PropertyChanged}" Width="100" HorizontalAlignment="Right"></TextBox>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label>Køn</Label>
-                        <TextBox Text="{Binding SelectedHorse.Gender, UpdateSourceTrigger=PropertyChanged}" Width="100" HorizontalAlignment="Right"></TextBox>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label>Type</Label>
-                        <TextBox Text="{Binding SelectedHorse.EquineType, UpdateSourceTrigger=PropertyChanged}" Width="100" HorizontalAlignment="Right"></TextBox>
-                    </StackPanel>
-                </StackPanel>
-            </StackPanel>
-
-            <!-- Foderplan  -->
-            <Label Grid.Row="1" FontWeight="Bold">FoderPlan</Label>
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-
-                <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1">
-                    <Label >Morgen</Label>
-                </Border>
-                <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="1">
-                    <Label>Middag</Label>
-                </Border>
-                <Border Grid.Column="2" Grid.Row="1" BorderBrush="Black" BorderThickness="1">
-                    <Label>Aften</Label>
-                </Border>
-            </Grid>
-
-            <!-- Tilkøb  -->
-            <Label Grid.Row="3" FontWeight="Bold">Tilkøb:</Label>
-
-        </Grid>
-
-
-
+        <Frame x:Name="HorseFrame" Grid.Column="2"></Frame>
 
     </Grid>
 </Page>

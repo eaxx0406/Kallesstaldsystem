@@ -57,7 +57,6 @@ namespace Stable_management_system.ViewModels
 
         public ICommand CreateHorseCMD { get; set; } = new CreateHorseCommand();
         public ICommand DeleteHorseCMD { get; set; } = new DeleteHorseCommand();
-        public ICommand UpdateHorseCMD { get; set; } = new UpdateHorseCommand();
         public ICommand SearchHorseCMD { get; set; } = new SearchHorseCommand();
     }
 }
