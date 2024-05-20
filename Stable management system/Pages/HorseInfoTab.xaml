@@ -32,15 +32,15 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontWeight="Bold">Ejer:</Label>
-                    <Label Content="{Binding SelectedHorse.CHRId}" Width="100" HorizontalAlignment="Right"></Label>
+                    <Label Content="{Binding SelectedHorse.OwnerId}" Width="100" HorizontalAlignment="Right"></Label>
                     <Label FontWeight="Bold">Kontakt:</Label>
-                    <Label Content="{Binding SelectedHorse.CHRId}" Width="100" HorizontalAlignment="Right"></Label>
+                    <Label Content="-" Width="100" HorizontalAlignment="Right"></Label>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontWeight="Bold">Boks:</Label>
-                    <Label Content="{Binding SelectedHorse.CHRId}" Width="100" HorizontalAlignment="Right"></Label>
+                    <Label Content="{Binding SelectedHorse.BoxId}" Width="100" HorizontalAlignment="Right"></Label>
                     <Label FontWeight="Bold">Fold:</Label>
-                    <Label Content="{Binding SelectedHorse.CHRId}" Width="100" HorizontalAlignment="Right"></Label>
+                    <Label Content="{Binding SelectedHorse.PaddockId}" Width="100" HorizontalAlignment="Right"></Label>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

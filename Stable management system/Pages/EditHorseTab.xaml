@@ -15,7 +15,7 @@
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         
         <Label>Edit</Label>
@@ -24,21 +24,26 @@
             <Image Source="Images/Horse.jpg"  Height="100" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label>Navn</Label>
+                    <Label  FontWeight="Bold">Navn</Label>
                     <TextBox Width="100" Text="{Binding SelectedHorse.Name, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Right" ></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label>CHR</Label>
+                    <Label  FontWeight="Bold">CHR</Label>
                     <TextBox Text="{Binding SelectedHorse.CHRId, UpdateSourceTrigger=PropertyChanged}" Width="100" HorizontalAlignment="Right"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label>Køn</Label>
-                    <TextBox Text="{Binding SelectedHorse.Gender, UpdateSourceTrigger=PropertyChanged}" Width="100" HorizontalAlignment="Right"></TextBox>
+                    <Label FontWeight="Bold">Ejer:</Label>
+                    <TextBox Text="{Binding SelectedHorse.OwnerId}" Width="100" HorizontalAlignment="Right"></TextBox>
+                    <Label FontWeight="Bold">Kontakt:</Label>
+                    <Label Content="-" Width="100" HorizontalAlignment="Right"></Label>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label>Type</Label>
-                    <TextBox Text="{Binding SelectedHorse.EquineType, UpdateSourceTrigger=PropertyChanged}" Width="100" HorizontalAlignment="Right"></TextBox>
+                    <Label FontWeight="Bold">Boks:</Label>
+                    <TextBox Text="{Binding SelectedHorse.BoxId}" Width="100" HorizontalAlignment="Right"></TextBox>
+                    <Label FontWeight="Bold">Fold:</Label>
+                    <TextBox Text="{Binding SelectedHorse.PaddockId}" Width="100" HorizontalAlignment="Right"></TextBox>
                 </StackPanel>
+
             </StackPanel>
         </StackPanel>
 
@@ -53,14 +58,25 @@
             </Grid.ColumnDefinitions>
 
             <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1">
-                <Label >Morgen</Label>
+                <StackPanel>
+                    <Label >Morgen</Label>
+                    <TextBox>Tilføj morgenmad</TextBox>
+                </StackPanel>
             </Border>
             <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="1">
-                <Label>Middag</Label>
+                <StackPanel>
+                    <Label>Middag</Label>
+                    <TextBox>Tilføj middagsmad</TextBox>
+                </StackPanel>
             </Border>
             <Border Grid.Column="2" Grid.Row="1" BorderBrush="Black" BorderThickness="1">
-                <Label>Aften</Label>
+                <StackPanel>
+                    <Label>Aften</Label>
+                    <TextBox>Tilføj aftenssmad</TextBox>
+                </StackPanel>
             </Border>
         </Grid>
+
+        <Button Grid.Row="4" Click="SaveButton_Click">Gem hest</Button>
     </Grid>
 </Page>

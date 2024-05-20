@@ -29,9 +29,9 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Button Content=" Opret " Command="{Binding CreateHorseCMD}" CommandParameter="{Binding}" Height ="30" Width="50" />
-            <Button Content=" Slet " Command="{Binding DeleteHorseCMD}" CommandParameter="{Binding}" Height ="30"  Width="50" Margin="10"/>
+            <Button Content=" Opret " Command="{Binding CreateHorseCMD}" CommandParameter="{Binding}" Height ="30" Width="50" Margin="10" />
             <Button Content=" Rediger " Height ="30"  Width="50" Margin="10" Click="Button_Click"/>
+            <Button Content=" Slet " Command="{Binding DeleteHorseCMD}" CommandParameter="{Binding}" Height ="30"  Width="50" Margin="10"/>
         </StackPanel>
 
         <!-- Gridsplitter  -->

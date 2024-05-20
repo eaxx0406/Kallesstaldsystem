@@ -24,6 +24,7 @@ namespace Stable_management_system.Pages
 
     public partial class Horseoverview : Page
     {
+
         HorseMainViewModel mvm = new HorseMainViewModel();
         public Horseoverview()
         {
@@ -34,7 +35,8 @@ namespace Stable_management_system.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            HorseFrame.Content = new EditHorseTab(mvm);
+           HorseFrame.Content = new EditHorseTab(mvm, HorseFrame);
+           
         }
     }
 }

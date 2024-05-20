@@ -21,10 +21,20 @@ namespace Stable_management_system.Pages
     /// </summary>
     public partial class EditHorseTab : Page
     {
-        public EditHorseTab(HorseMainViewModel mvm)
+        Frame Frame {  get; set; }
+        HorseMainViewModel Mvm { get; set; }
+
+        public EditHorseTab(HorseMainViewModel mvm, Frame frame)
         {
             InitializeComponent();
             DataContext = mvm;
+            Mvm = mvm;
+            Frame = frame;
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Content = new HorseInfoTab(Mvm);
         }
     }
 }
