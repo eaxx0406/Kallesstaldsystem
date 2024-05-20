@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="850" Width="10000">
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
@@ -28,7 +28,8 @@
         <Border Grid.Row="2" Background="#FF0000">
             <Label Grid.Row="2">Team 14 lavet i samarbejde med Kallehavegård I/S</Label>
         </Border>
-       
+        <ComboBox HorizontalAlignment="Left" Margin="277,266,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+
 
 
 
