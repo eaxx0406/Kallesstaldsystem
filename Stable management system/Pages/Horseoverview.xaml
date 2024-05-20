@@ -15,9 +15,13 @@
             <ColumnDefinition Width="10"></ColumnDefinition>
             <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
+
         <!-- første kolonne (listboxen og de to knapper) -->
-        <ListBox ItemsSource="{Binding Horses}" SelectedItem="{Binding SelectedHorse}" Margin="10,10,10,50">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10">
+            <TextBox Text="{Binding SearchForHorse}" Height="20" Width="151"/>
+            <Button Command="{Binding SearchHorseCMD}" CommandParameter="{Binding}" Height="20">Søg</Button >
+        </StackPanel>
+        <ListBox ItemsSource="{Binding Horses}" SelectedItem="{Binding SelectedHorse}" Margin="10,35,10,50">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding Name}"></Label>
@@ -25,13 +29,14 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Button Content=" Opret " Command="{Binding CreateHorseCMD}" CommandParameter="{Binding}" Height ="30" Width="50" Margin="10" />
+            <Button Content=" Opret " Command="{Binding CreateHorseCMD}" CommandParameter="{Binding}" Height ="30" Width="50" />
             <Button Content=" Slet " Command="{Binding DeleteHorseCMD}" CommandParameter="{Binding}" Height ="30"  Width="50" Margin="10"/>
+            <Button Content=" Rediger " Command="{Binding UpdateHorseCMD}" CommandParameter="{Binding}" Height ="30"  Width="50" Margin="10"/>
         </StackPanel>
-        
+
         <!-- Gridsplitter  -->
         <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch"/>
-        
+
         <!-- trejde(venstre) kolonne der viser hesteInfo ydereligere inddelt i tre rækker -->
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
@@ -41,9 +46,9 @@
                 <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            
+
             <!-- Basal hesteinfo  -->
-            <StackPanel Grid.Row ="0" Orientation="Horizontal" Height="1007">
+            <StackPanel Grid.Row ="0" Orientation="Horizontal" Height="1200">
                 <Image Source="Images/Horse.jpg"  Height="100" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -89,9 +94,9 @@
             <Label Grid.Row="3" FontWeight="Bold">Tilkøb:</Label>
 
         </Grid>
-          
 
-          
+
+
 
     </Grid>
 </Page>

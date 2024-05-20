@@ -11,8 +11,9 @@ namespace Stable_management_system.ViewModels
     {
         private HorseController _horseController { get; set; }
         public ObservableCollection<Horse> Horses { get; set; } = new ObservableCollection<Horse>();
-
         public Horse SelectedHorse { get; set; }
+
+        public string SearchForHorse {  get; set; }
 
         public HorseMainViewModel()
         {
@@ -22,10 +23,25 @@ namespace Stable_management_system.ViewModels
 
         public void LoadHorses()
         {
+            Horses.Clear();
             List<Horse> TempHorses = _horseController.GetAll();
             foreach (Horse horse in TempHorses)
             {
                 Horses.Add(horse);
+
+            }
+        }
+        public void LoadHorses(string searchFor)
+        {
+            Horses.Clear();
+            List<Horse> TempHorses = _horseController.GetAll();
+            foreach (Horse horse in TempHorses)
+            {
+                string HorsenameAllLower = horse.Name.ToLower();
+                if (HorsenameAllLower.Contains(searchFor.ToLower()))
+                {
+                    Horses.Add(horse);
+                }
             }
         }
         public void AddHorse(Horse horse)
@@ -41,6 +57,8 @@ namespace Stable_management_system.ViewModels
 
         public ICommand CreateHorseCMD { get; set; } = new CreateHorseCommand();
         public ICommand DeleteHorseCMD { get; set; } = new DeleteHorseCommand();
+        public ICommand UpdateHorseCMD { get; set; } = new UpdateHorseCommand();
+        public ICommand SearchHorseCMD { get; set; } = new SearchHorseCommand();
     }
 }
 
