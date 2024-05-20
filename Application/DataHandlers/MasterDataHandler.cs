@@ -30,6 +30,8 @@ namespace ApplicationLayer.DataHandlers
             Read();
         }
 
+
+
         private void Read()
         {
             //AddOnRepository = _addOnDataHandler.Read();
@@ -43,6 +45,14 @@ namespace ApplicationLayer.DataHandlers
         }
         public void Write()
         {
+
+
+            DirectoryInfo directory = new DirectoryInfo("c:\\StableManagementSystem\\");
+            FileInfo[] files = directory.GetFiles();
+            foreach (FileInfo file in files)
+            {
+                file.Delete();
+            }
 
             _boxDataHandler.Write(BoxRepository);
             _deviationsDatahandler.Write(DeviationRepository);

@@ -37,6 +37,8 @@ namespace ApplicationLayer.DataHandlers.DomaineDatahandler
         }
         internal override void Write(HorseRepository repository)
         {
+
+
             CheckIfFileExists(_filePath);
             List<Horse> lines = repository.GetAll().ToList();
             foreach (Horse horse in lines)
