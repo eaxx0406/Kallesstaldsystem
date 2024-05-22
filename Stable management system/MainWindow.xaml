@@ -17,7 +17,7 @@
             <Button Content=" Hesteoversigt " Margin="10" Click="HorseOverviewButton_Click" FontWeight="Bold"/>
             <Button Content=" Opstalderoversigt " Margin="10" Click="HorseOverviewButton_Click" FontWeight="Bold"/>
             <Button Content=" Foldoversigt " Margin="10" Click="PaddockOverviewButton_Click" FontWeight="Bold" />
-            <Button Content=" Afvigelser " Margin="10" FontWeight="Bold" />
+            <Button Content=" Afvigelser " Margin="10" FontWeight="Bold" Click="Button_Click" />
         </StackPanel>
         <Button Content=" Afslut " Margin="10" HorizontalAlignment="Right" FontWeight="Bold"></Button>
 

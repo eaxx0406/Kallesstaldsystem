@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Stable_management_system.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace Stable_management_system.Pages.Deviations
     /// </summary>
     public partial class DeviationOverview : Page
     {
+        DeviationsViewModel dvm = new DeviationsViewModel();
         public DeviationOverview()
         {
             InitializeComponent();
+            DataContext = dvm;
         }
     }
 }
