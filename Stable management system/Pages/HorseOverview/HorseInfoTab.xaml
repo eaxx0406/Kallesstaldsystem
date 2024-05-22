@@ -17,10 +17,9 @@
                 <RowDefinition Height="50"></RowDefinition>
             </Grid.RowDefinitions>
 
-        <Label>info</Label>
         <!-- Basal hesteinfo  -->
         <StackPanel Grid.Row ="0" Orientation="Horizontal" Height="1200">
-            <Image Source="Images/Horse.jpg"  Height="100" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Source="../Images/Horse.jpg"  Height="100" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontWeight="Bold">Navn: </Label>

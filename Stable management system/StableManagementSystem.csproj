@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Pages\PaddockOverView.xaml.cs">
+    <Compile Update="Pages\PadoockOverview\PaddockOverView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
