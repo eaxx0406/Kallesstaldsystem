@@ -12,7 +12,6 @@ namespace Stable_management_system.ViewModels
         private HorseController _horseController { get; set; }
         public ObservableCollection<Horse> Horses { get; set; } = new ObservableCollection<Horse>();
         public Horse SelectedHorse { get; set; }
-
         public string SearchForHorse {  get; set; }
 
         public HorseMainViewModel()
@@ -64,6 +63,7 @@ namespace Stable_management_system.ViewModels
         public ICommand DeleteHorseCMD { get; set; } = new DeleteHorseCommand();
         public ICommand SearchHorseCMD { get; set; } = new SearchHorseCommand();
         public ICommand UpdateHorseCMD { get; set; } = new UpdateHorseCommand();
+
     }
 }
 

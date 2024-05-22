@@ -40,6 +40,7 @@
                     <Label Content="{Binding SelectedHorse.BoxId}" Width="100" HorizontalAlignment="Right"></Label>
                     <Label FontWeight="Bold">Fold:</Label>
                     <Label Content="{Binding SelectedHorse.PaddockId}" Width="100" HorizontalAlignment="Right"></Label>
+                   
                 </StackPanel>
             </StackPanel>
         </StackPanel>

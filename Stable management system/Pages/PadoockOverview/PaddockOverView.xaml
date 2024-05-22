@@ -15,7 +15,7 @@
             <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ListBox ItemsSource="{Binding Paddocks}" SelectedItem="{Binding SelectedPaddock}">
+        <ListBox ItemsSource="{Binding Paddocks}" SelectedItem="{Binding SelectedPaddock}" SelectionChanged="UpdateSelectedPaddock">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding Name}"></Label>
@@ -36,7 +36,13 @@
             </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontWeight="Bold">Heste:</Label>
-                    <!--<Label Content="{Binding SelectedPaddock}"></Label>-->
+                    <ItemsControl Height="100"  Width="100" ItemsSource="{Binding HorsesOnSelectedPaddock}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </StackPanel>
             </StackPanel>
 </StackPanel>

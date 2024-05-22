@@ -27,5 +27,10 @@ namespace Stable_management_system.Pages
             InitializeComponent();
             DataContext = pvm;
         }
+
+        private void UpdateSelectedPaddock(object sender, SelectionChangedEventArgs e)
+        {
+            pvm.GetHorsesOnSelectedPaddock();
+        }
     }
 }

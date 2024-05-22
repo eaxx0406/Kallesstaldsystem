@@ -9,12 +9,30 @@ namespace ApplicationLayer.Repositories
 
         public PaddockRepository() 
         {
-            _paddocks.Add(new Paddock("Sandfold 1", true));
-            _paddocks.Add(new Paddock("Sandfold 2", true));
-            _paddocks.Add(new Paddock("Græsfold 1", true));
-            _paddocks.Add(new Paddock("Græsfold 2", true));
-            _paddocks.Add(new Paddock("Fælles Hoppefold", true));
-            _paddocks.Add(new Paddock("Fælles Vallakfold", true));
+            //Add(new Paddock("Sandfold 1", true));
+            //Add(new Paddock("Sandfold 2", true));
+            //Add(new Paddock("Sandfold 3", true));
+            //Add(new Paddock("Sandfold 4", false));
+            //Add(new Paddock("Sandfold 5", false));
+            //Add(new Paddock("Græsfold 1", true));
+            //Add(new Paddock("Græsfold 2", false));
+            //Add(new Paddock("Græsfold 3", true));
+            //Add(new Paddock("Græsfold 4", false));
+            //Add(new Paddock("Græsfold 5", true));
+            //Add(new Paddock("Græsfold 6", true));
+            //Add(new Paddock("Græsfold 7", false));
+            //Add(new Paddock("Græsfold 8", true));
+            //Add(new Paddock("Græsfold 9", true));
+            //Add(new Paddock("Græsfold 10", true));
+            //Add(new Paddock("Græsfold 11", false));
+            //Add(new Paddock("Græsfold 12", true));
+            //Add(new Paddock("Græsfold 13", true));
+            //Add(new Paddock("Græsfold 14", false));
+            //Add(new Paddock("Græsfold 15", false));
+            //Add(new Paddock("Fælles Hoppefold", true));
+            //Add(new Paddock("Fælles Hoppefold sommer", true));
+            //Add(new Paddock("Fælles Vallakfold", true));
+            //Add(new Paddock("Fælles vallakfold sommer", true));
 
         }
     
