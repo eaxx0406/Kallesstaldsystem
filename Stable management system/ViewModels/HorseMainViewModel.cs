@@ -44,6 +44,11 @@ namespace Stable_management_system.ViewModels
                 }
             }
         }
+
+        public void Update(Horse horse)
+        {
+            _horseController.Update(horse);
+        }
         public void AddHorse(Horse horse)
         {
             _horseController.Add(horse);
@@ -58,6 +63,7 @@ namespace Stable_management_system.ViewModels
         public ICommand CreateHorseCMD { get; set; } = new CreateHorseCommand();
         public ICommand DeleteHorseCMD { get; set; } = new DeleteHorseCommand();
         public ICommand SearchHorseCMD { get; set; } = new SearchHorseCommand();
+        public ICommand UpdateHorseCMD { get; set; } = new UpdateHorseCommand();
     }
 }
 

@@ -42,7 +42,7 @@ namespace ApplicationLayer.Controllers
             _dataHandler.Write();
         }
 
-        internal virtual void Update(TModel model)
+        public virtual void Update(TModel model)
         {
             _repository.Update(model);
             _dataHandler.Write();

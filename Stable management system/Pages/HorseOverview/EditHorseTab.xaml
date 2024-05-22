@@ -33,15 +33,15 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontWeight="Bold">Ejer:</Label>
-                    <TextBox Text="{Binding SelectedHorse.OwnerId}" Width="100" HorizontalAlignment="Right"></TextBox>
+                    <TextBox Text="{Binding SelectedHorse.OwnerId, UpdateSourceTrigger=PropertyChanged}" Width="100" HorizontalAlignment="Right"></TextBox>
                     <Label FontWeight="Bold">Kontakt:</Label>
                     <Label Content="-" Width="100" HorizontalAlignment="Right"></Label>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontWeight="Bold">Boks:</Label>
-                    <TextBox Text="{Binding SelectedHorse.BoxId}" Width="100" HorizontalAlignment="Right"></TextBox>
+                    <TextBox Text="{Binding SelectedHorse.BoxId, UpdateSourceTrigger=PropertyChanged}" Width="100" HorizontalAlignment="Right"></TextBox>
                     <Label FontWeight="Bold">Fold:</Label>
-                    <TextBox Text="{Binding SelectedHorse.PaddockId}" Width="100" HorizontalAlignment="Right"></TextBox>
+                    <TextBox Text="{Binding SelectedHorse.PaddockId, UpdateSourceTrigger=PropertyChanged}" Width="100" HorizontalAlignment="Right"></TextBox>
                 </StackPanel>
 
             </StackPanel>
@@ -77,6 +77,6 @@
             </Border>
         </Grid>
 
-        <Button Grid.Row="4" Click="SaveButton_Click">Gem hest</Button>
+        <Button Command="{Binding UpdateHorseCMD}" CommandParameter="{Binding}" Grid.Row="4" Click="SaveButton_Click">Gem hest</Button>
     </Grid>
 </Page>

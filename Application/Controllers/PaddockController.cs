@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ApplicationLayer.Controllers
 {
-    internal class PaddockController : AbstractController<Paddock, PaddockRepository>
+    public class PaddockController : AbstractController<Paddock, PaddockRepository>
     {
-        internal PaddockController() : base(_dataHandler.PaddockRepository)
+        public PaddockController() : base(_dataHandler.PaddockRepository)
         {
 
         }

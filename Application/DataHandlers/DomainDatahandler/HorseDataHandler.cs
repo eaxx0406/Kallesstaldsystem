@@ -30,15 +30,13 @@ namespace ApplicationLayer.DataHandlers.DomaineDatahandler
                 int boxId = int.Parse(values[7]);
                 int feedScheduel = int.Parse(values[8]);
 
-                Horse horse = new Horse(id, name, chrId, type, gender);
+                Horse horse = new Horse(id, name, chrId, type, gender,paddockId,ownerID,boxId,feedScheduel);
                 _horseRepository.Add(horse);
             }
             return _horseRepository;
         }
         internal override void Write(HorseRepository repository)
         {
-
-
             CheckIfFileExists(_filePath);
             List<Horse> lines = repository.GetAll().ToList();
             foreach (Horse horse in lines)

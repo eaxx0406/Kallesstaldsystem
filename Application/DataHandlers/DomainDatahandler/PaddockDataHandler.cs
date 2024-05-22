@@ -32,10 +32,11 @@ namespace ApplicationLayer.DataHandlers.DomaineDatahandler
         internal override void Write(PaddockRepository paddockRepository)
         {
             CheckIfFileExists(_filePath);
-            List<Paddock> lines = (List<Paddock>)_paddockRepository.GetAll();
+            List<Paddock> lines = paddockRepository.GetAll().ToList();
+
             foreach (Paddock paddock in lines)
             {
-                Console.OutputEncoding = Encoding.UTF8;
+                //Console.OutputEncoding = Encoding.UTF8;
                 string createText = $"{paddock.Id}\t{paddock.Name}\t{paddock.Leased}";
                 File.AppendAllText(_filePath, createText + Environment.NewLine );
             }

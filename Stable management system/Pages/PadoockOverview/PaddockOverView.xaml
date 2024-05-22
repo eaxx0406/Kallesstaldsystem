@@ -11,14 +11,35 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label>Her skal der være en ListBox</Label>
-        <Label Grid.Column="1">Her skal man kunne se hvilke heste der går på folden info</Label>
-        
-        
-        
-        
+        <ListBox ItemsSource="{Binding Paddocks}" SelectedItem="{Binding SelectedPaddock}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Name}"></Label>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel Orientation="Horizontal"  Grid.Column="2">
+            <Image Source="../Images/Paddock.jpg"  Height="100" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <StackPanel >
+            <StackPanel Orientation="Horizontal">
+                <Label FontWeight="Bold">Navn:</Label>
+                <Label Content="{Binding SelectedPaddock.Name}"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label FontWeight="Bold">Status:</Label>
+                <Label Content="{Binding SelectedPaddock.Leased}"></Label>
+            </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontWeight="Bold">Heste:</Label>
+                    <!--<Label Content="{Binding SelectedPaddock}"></Label>-->
+                </StackPanel>
+            </StackPanel>
+</StackPanel>
+
     </Grid>
 </Page>

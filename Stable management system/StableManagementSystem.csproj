@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <None Remove="Pages\Images\Horse.jpg" />
+    <None Remove="Pages\Images\Paddock.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +21,7 @@
 
   <ItemGroup>
     <Resource Include="Pages\Images\Horse.jpg" />
+    <Resource Include="Pages\Images\Paddock.jpg" />
   </ItemGroup>
 
   <ItemGroup>

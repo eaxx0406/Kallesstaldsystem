@@ -12,20 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Stable_management_system.ViewModels;
 
-namespace Stable_management_system.Pages
+namespace Stable_management_system.Pages.Deviations
 {
     /// <summary>
-    /// Interaction logic for Paddockoverview.xaml
+    /// Interaction logic for DeviationOverview.xaml
     /// </summary>
-    public partial class PaddockOverview : Page
+    public partial class DeviationOverview : Page
     {
-        PaddockMainViewModel pvm = new PaddockMainViewModel();
-        public PaddockOverview()
+        public DeviationOverview()
         {
             InitializeComponent();
-            DataContext = pvm;
         }
     }
 }

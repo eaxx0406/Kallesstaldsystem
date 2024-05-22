@@ -20,8 +20,6 @@ namespace StableManagementSystem
             Main.Content = new Horseoverview();
         }
 
-
-
         private void PaddockOverviewButton_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new PaddockOverview();

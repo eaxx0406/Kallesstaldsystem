@@ -3,9 +3,21 @@ using Kallesstaldsystem.Model;
 
 namespace ApplicationLayer.Repositories
 {
-    internal class PaddockRepository : IRepository<Paddock>
+    public class PaddockRepository : IRepository<Paddock>
     {
         private List<Paddock> _paddocks = new List<Paddock>();
+
+        public PaddockRepository() 
+        {
+            _paddocks.Add(new Paddock("Sandfold 1", true));
+            _paddocks.Add(new Paddock("Sandfold 2", true));
+            _paddocks.Add(new Paddock("Græsfold 1", true));
+            _paddocks.Add(new Paddock("Græsfold 2", true));
+            _paddocks.Add(new Paddock("Fælles Hoppefold", true));
+            _paddocks.Add(new Paddock("Fælles Vallakfold", true));
+
+        }
+    
         public void Add(Paddock entity)
         {
             int maxId = 0;

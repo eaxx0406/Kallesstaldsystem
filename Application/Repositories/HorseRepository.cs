@@ -6,11 +6,6 @@ namespace ApplicationLayer.Repositories
     {
         private List<Horse> _horses { get; set; } = new List<Horse>();
 
-        public HorseRepository() 
-        {
-            _horses.Add(new Horse(1, "TestHest", "testCHR", Horse.EquineType.Horse, Horse.Gender.Mare));
-        }
-
         public void Add(Horse horse)
         {
             int maxId = 0;

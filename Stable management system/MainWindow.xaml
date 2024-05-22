@@ -16,7 +16,7 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0">
             <Button Content=" Hesteoversigt " Margin="10" Click="HorseOverviewButton_Click" FontWeight="Bold"/>
             <Button Content=" Opstalderoversigt " Margin="10" Click="HorseOverviewButton_Click" FontWeight="Bold"/>
-            <Button x:Name="CreateBtn" Content=" Foldoversigt " Margin="10" Click="PaddockOverviewButton_Click" FontWeight="Bold" />
+            <Button Content=" Foldoversigt " Margin="10" Click="PaddockOverviewButton_Click" FontWeight="Bold" />
             <Button Content=" Afvigelser " Margin="10" FontWeight="Bold" />
         </StackPanel>
         <Button Content=" Afslut " Margin="10" HorizontalAlignment="Right" FontWeight="Bold"></Button>
@@ -28,7 +28,6 @@
         <Border Grid.Row="2" Background="#FF0000">
             <Label Grid.Row="2">Team 14 lavet i samarbejde med Kallehavegård I/S</Label>
         </Border>
-        <ComboBox HorizontalAlignment="Left" Margin="277,266,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
 
 
 
