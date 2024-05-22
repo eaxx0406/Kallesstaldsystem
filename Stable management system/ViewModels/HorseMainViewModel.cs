@@ -16,6 +16,8 @@ namespace Stable_management_system.ViewModels
         public Horse SelectedHorse { get; set; }
         public FeedingScheduel SelectedHorsesFeedingScheduel { get; set; }
         public string SelectedHorsePaddockName { get; set; } = "Ikke sat";
+        public string SelectedHorseOwnerPhone { get; set; } = "Ikke Sat";
+        public string SelectedHorseOwnerName { get; set; } = "Ikke Sat";
         public string SearchForHorse {  get; set; }
 
         public HorseMainViewModel()
@@ -90,6 +92,20 @@ namespace Stable_management_system.ViewModels
                 if (paddock.Id == SelectedHorse.PaddockId)
                 {
                     SelectedHorsePaddockName = paddock.Name;
+                }
+            }
+        }
+
+        public void GetOwnerInfo()
+        {
+            HorseOwnerController horseOwnerController = new HorseOwnerController();
+            List<HorseOwner> allHorseOwners = horseOwnerController.GetAll();
+            foreach (HorseOwner horseOwner in allHorseOwners)
+            {
+                if (horseOwner.Id == SelectedHorse.OwnerId)
+                {
+                    SelectedHorseOwnerName = horseOwner.Name;
+                    SelectedHorseOwnerPhone = horseOwner.Phone;
                 }
             }
         }

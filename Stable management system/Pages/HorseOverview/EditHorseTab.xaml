@@ -60,19 +60,19 @@
             <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1">
                 <StackPanel>
                     <Label >Morgen</Label>
-                    <TextBox>Tilføj morgenmad</TextBox>
+                    <TextBox>Tilføj morgenmad(not implemented)</TextBox>
                 </StackPanel>
             </Border>
             <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="1">
                 <StackPanel>
                     <Label>Middag</Label>
-                    <TextBox>Tilføj middagsmad</TextBox>
+                    <TextBox>Tilføj middagsmad (not implemented)</TextBox>
                 </StackPanel>
             </Border>
             <Border Grid.Column="2" Grid.Row="1" BorderBrush="Black" BorderThickness="1">
                 <StackPanel>
                     <Label>Aften</Label>
-                    <TextBox>Tilføj aftenssmad</TextBox>
+                    <TextBox>Tilføj aftenssmad (not implemented)</TextBox>
                 </StackPanel>
             </Border>
         </Grid>

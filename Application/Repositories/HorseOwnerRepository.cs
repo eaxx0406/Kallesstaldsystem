@@ -8,6 +8,11 @@ namespace ApplicationLayer.Repositories
     {
         private List<HorseOwner> _horseOwners { get; set; } = new List<HorseOwner>();
 
+        public HorseOwnerRepository() 
+        { 
+            Add(new HorseOwner("Kirstine Qra", "112"));
+            Add(new HorseOwner("Svend", "114"));
+        }
         public void Add(HorseOwner horseOwner)
         {
             int maxId = 0;

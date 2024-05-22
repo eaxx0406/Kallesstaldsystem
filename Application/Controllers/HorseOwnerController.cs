@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ApplicationLayer.Controllers
 {
-    internal class HorseOwnerController : AbstractController<HorseOwner, HorseOwnerRepository>
+    public class HorseOwnerController : AbstractController<HorseOwner, HorseOwnerRepository>
     {
-        internal HorseOwnerController() : base(_dataHandler.HorseOwnerRepository)
+        public HorseOwnerController() : base(_dataHandler.HorseOwnerRepository)
         {
 
         }

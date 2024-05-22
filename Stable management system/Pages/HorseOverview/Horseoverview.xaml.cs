@@ -42,6 +42,7 @@ namespace Stable_management_system.Pages
         {
             mvm.GetSelectedFeedingScheduel();
             mvm.GetPaddockName();
+            mvm.GetOwnerInfo();
         }
     }
 }

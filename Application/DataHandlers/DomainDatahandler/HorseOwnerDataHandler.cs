@@ -35,7 +35,7 @@ namespace ApplicationLayer.DataHandlers.DomaineDatahandler
             List<HorseOwner> lines = (List<HorseOwner>)_horseOwnerRepository.GetAll();
             foreach (HorseOwner horseOwner in lines)
             {
-                Console.OutputEncoding = Encoding.UTF8;
+                //Console.OutputEncoding = Encoding.UTF8;
                 string createText = $"{horseOwner.Id}\t{horseOwner.Name}\t{horseOwner.Phone}";
                 File.AppendAllText(_filePath, createText + Environment.NewLine);
             }
