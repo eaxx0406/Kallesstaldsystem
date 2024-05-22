@@ -14,8 +14,15 @@
             <ColumnDefinition Width="10"></ColumnDefinition>
             <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <ListView Grid.Column="2" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
-        
-        
+
+
     </Grid>
 </Page>

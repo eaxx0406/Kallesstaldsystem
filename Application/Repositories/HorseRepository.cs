@@ -22,7 +22,7 @@ namespace ApplicationLayer.Repositories
         //    Add(new Horse("Punktum", " ", Horse.EquineType.Pony, Horse.Gender.Gelding));
         //    Add(new Horse("Barcardi", " ", Horse.EquineType.Pony, Horse.Gender.Gelding));
         //    Add(new Horse("Blue Chip", " ", Horse.EquineType.Horse, Horse.Gender.Gelding));
-        //    Add(new Horse("Alf", " ", Horse.EquineType.Horse, Horse.Gender.Gelding));
+        //    Add(new Horse("Alf", " ", Horse.EquineType.Horse, Horse.Gender.Gelding,3,3,3,3));
         //    Add(new Horse("Filly", " ", Horse.EquineType.Pony, Horse.Gender.Mare));
         //    Add(new Horse("Prada", " ", Horse.EquineType.Horse, Horse.Gender.Mare));
         //    Add(new Horse("Sorbet", " ", Horse.EquineType.Horse, Horse.Gender.Mare));

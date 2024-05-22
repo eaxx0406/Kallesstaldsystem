@@ -10,8 +10,18 @@ namespace ApplicationLayer.Repositories
 
         public HorseOwnerRepository() 
         { 
-            Add(new HorseOwner("Kirstine Qra", "112"));
+            Add(new HorseOwner("Kirstine", "112"));
             Add(new HorseOwner("Svend", "114"));
+            Add(new HorseOwner("Amanda", "88 88 88 88"));
+            Add(new HorseOwner("Emma", "90 88 97 88"));
+            Add(new HorseOwner("Claus", "77 88 77 88"));
+            Add(new HorseOwner("Lene", "12 88 97 88"));
+            Add(new HorseOwner("Lasse", "30 88 45 87"));
+            Add(new HorseOwner("Kurt", "54 38 97 88"));
+            Add(new HorseOwner("Henriette", "60 28 97 88"));
+            Add(new HorseOwner("Laura", "40 28 97 68"));
+            Add(new HorseOwner("Michelle", "40 65 97 69"));
+            Add(new HorseOwner("Sigurd", "44 28 97 76"));
         }
         public void Add(HorseOwner horseOwner)
         {
