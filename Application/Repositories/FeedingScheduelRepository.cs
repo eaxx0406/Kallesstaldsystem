@@ -3,9 +3,16 @@ using Kallesstaldsystem.Model;
 
 namespace ApplicationLayer.Repositories
 {
-    internal class FeedingScheduelRepository : IRepository<FeedingScheduel>
+    public class FeedingScheduelRepository : IRepository<FeedingScheduel>
     {
         private List<FeedingScheduel> _feedingScheduels= new List<FeedingScheduel>();
+
+        public FeedingScheduelRepository() 
+        {
+            Add(new FeedingScheduel("Eget foder","","Eget Foder"));
+            Add(new FeedingScheduel("400g", "400g", "400g"));
+            Add(new FeedingScheduel("Eget foder", "Eget foder", "Eget Foder"));
+        }
         public void Add(FeedingScheduel entity)
         {
             int MaxId = 0;

@@ -36,7 +36,7 @@ namespace ApplicationLayer.DataHandlers.DomaineDatahandler
             List<FeedingScheduel> lines = (List<FeedingScheduel>)_feedingScheduelsRepository.GetAll();
             foreach (FeedingScheduel feedingScheduel in lines)
             {
-                Console.OutputEncoding = Encoding.UTF8;
+                //Console.OutputEncoding = Encoding.UTF8;
                 string createText = $"{feedingScheduel.Id}\t{feedingScheduel.Morning}\t{feedingScheduel.Noon}\t{feedingScheduel.Evening}";
                 File.AppendAllText(_filePath, createText + Environment.NewLine);
             }

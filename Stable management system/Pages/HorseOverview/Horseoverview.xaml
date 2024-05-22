@@ -21,7 +21,7 @@
             <TextBox Text="{Binding SearchForHorse}" Height="20" Width="151"/>
             <Button Command="{Binding SearchHorseCMD}" CommandParameter="{Binding}" Height="20">Søg</Button >
         </StackPanel>
-        <ListBox ItemsSource="{Binding Horses}" SelectedItem="{Binding SelectedHorse}" Margin="10,35,10,50">
+        <ListBox ItemsSource="{Binding Horses}" SelectedItem="{Binding SelectedHorse}" Margin="10,35,10,50" SelectionChanged="UpdateSelectedHorse">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding Name}"></Label>

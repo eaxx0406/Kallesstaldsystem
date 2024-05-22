@@ -53,6 +53,20 @@ namespace Kallesstaldsystem.Model
 
         }
 
+        public Horse (string name, string cHRId, EquineType type, Gender gender, int paddockId, int ownerId, int boxId, int feedingScheduel)
+        {
+        
+            Name = name;
+            CHRId = cHRId;
+            HorseType = type;
+            HorseGender = gender;
+            PaddockId = paddockId;
+            OwnerId = ownerId;
+            BoxId = boxId;
+            FeedingScheduelId = feedingScheduel;
+
+        }
+
         //create contructors for the enums
         public Horse(string name, string cHRId, EquineType type, Gender gender)
         {

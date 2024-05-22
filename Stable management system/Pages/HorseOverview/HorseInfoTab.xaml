@@ -39,7 +39,7 @@
                     <Label FontWeight="Bold">Boks:</Label>
                     <Label Content="{Binding SelectedHorse.BoxId}" Width="100" HorizontalAlignment="Right"></Label>
                     <Label FontWeight="Bold">Fold:</Label>
-                    <Label Content="{Binding SelectedHorse.PaddockId}" Width="100" HorizontalAlignment="Right"></Label>
+                    <Label Content="{Binding SelectedHorsePaddockName}" Width="100" HorizontalAlignment="Right"></Label>
                    
                 </StackPanel>
             </StackPanel>
@@ -56,13 +56,22 @@
             </Grid.ColumnDefinitions>
 
             <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1">
-                <Label >Morgen</Label>
+                <StackPanel>
+                    <Label >Morgen</Label>
+                    <Label Content="{Binding SelectedHorsesFeedingScheduel.Morning}"> </Label>
+                </StackPanel>
             </Border>
             <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="1">
-                <Label>Middag</Label>
+                <StackPanel>
+                    <Label>Middag</Label>
+                    <Label Content="{Binding SelectedHorsesFeedingScheduel.Noon}"></Label>
+                </StackPanel>
             </Border>
             <Border Grid.Column="2" Grid.Row="1" BorderBrush="Black" BorderThickness="1">
-                <Label>Aften</Label>
+                <StackPanel>
+                    <Label>Aften</Label>
+                    <Label Content="{Binding SelectedHorsesFeedingScheduel.Evening}"></Label>
+                </StackPanel>
             </Border>
         </Grid>
 

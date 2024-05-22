@@ -15,7 +15,8 @@ namespace Stable_management_system.ViewModels
         private PaddockController _paddockController {  get; set; }
         private HorseController _horseController { get; set; }
         public ObservableCollection<Paddock> Paddocks { get; set; } = new ObservableCollection<Paddock>();
-     
+        public Paddock SelectedPaddock { get; set; }
+        public ObservableCollection<Horse> HorsesOnSelectedPaddock { get; set; } = new ObservableCollection<Horse>();
 
         public PaddockMainViewModel() 
         {
@@ -32,10 +33,6 @@ namespace Stable_management_system.ViewModels
                 Paddocks.Add(paddock);
             }
         }
-
-        public Paddock SelectedPaddock { get; set; }
-        public ObservableCollection<Horse> HorsesOnSelectedPaddock { get; set; } = new ObservableCollection<Horse>();
-
         public void GetHorsesOnSelectedPaddock()
         {
             HorsesOnSelectedPaddock.Clear();

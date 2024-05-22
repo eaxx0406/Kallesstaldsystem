@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ApplicationLayer.Controllers
 {
-    internal class FeedingScheduelController: AbstractController <FeedingScheduel, FeedingScheduelRepository>
+    public class FeedingScheduelController: AbstractController <FeedingScheduel, FeedingScheduelRepository>
     {
-        internal FeedingScheduelController() : base(_dataHandler.FeedingScheduelRepository)
+        public FeedingScheduelController() : base(_dataHandler.FeedingScheduelRepository)
         {
 
         }

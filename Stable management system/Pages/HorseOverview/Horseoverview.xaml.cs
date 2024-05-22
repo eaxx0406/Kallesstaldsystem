@@ -38,5 +38,10 @@ namespace Stable_management_system.Pages
            HorseFrame.Content = new EditHorseTab(mvm, HorseFrame);
            
         }
+        private void UpdateSelectedHorse(object sender, SelectionChangedEventArgs e)
+        {
+            mvm.GetSelectedFeedingScheduel();
+            mvm.GetPaddockName();
+        }
     }
 }

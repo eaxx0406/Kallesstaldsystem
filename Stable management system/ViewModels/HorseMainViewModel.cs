@@ -4,14 +4,18 @@ using ApplicationLayer.Controllers;
 using Kallesstaldsystem.Model;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using System.Dynamic;
+using System.ComponentModel;
 
 namespace Stable_management_system.ViewModels
 {
-    public class HorseMainViewModel
+    public class HorseMainViewModel 
     {
         private HorseController _horseController { get; set; }
         public ObservableCollection<Horse> Horses { get; set; } = new ObservableCollection<Horse>();
         public Horse SelectedHorse { get; set; }
+        public FeedingScheduel SelectedHorsesFeedingScheduel { get; set; }
+        public string SelectedHorsePaddockName { get; set; } = "Ikke sat";
         public string SearchForHorse {  get; set; }
 
         public HorseMainViewModel()
@@ -64,6 +68,31 @@ namespace Stable_management_system.ViewModels
         public ICommand SearchHorseCMD { get; set; } = new SearchHorseCommand();
         public ICommand UpdateHorseCMD { get; set; } = new UpdateHorseCommand();
 
+        public void GetSelectedFeedingScheduel()
+        {
+            FeedingScheduelController feedingScheduelController = new FeedingScheduelController();
+            List<FeedingScheduel> allFeedingschduels = feedingScheduelController.GetAll();
+            foreach (FeedingScheduel feedingscheduel in allFeedingschduels)
+            {
+                if (feedingscheduel.Id == SelectedHorse.FeedingScheduelId)
+                {
+                    SelectedHorsesFeedingScheduel = feedingscheduel;
+                }
+            }
+        }
+
+        public void GetPaddockName()
+        {
+            PaddockController paddockController = new PaddockController();
+            List<Paddock> allPaddocks = paddockController.GetAll();
+            foreach (Paddock paddock in allPaddocks)
+            {
+                if (paddock.Id == SelectedHorse.PaddockId)
+                {
+                    SelectedHorsePaddockName = paddock.Name;
+                }
+            }
+        }
     }
 }
 
