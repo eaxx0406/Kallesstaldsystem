@@ -11,7 +11,13 @@ namespace ApplicationLayer.Repositories
         {
             Add(new FeedingScheduel("Eget foder","","Eget Foder"));
             Add(new FeedingScheduel("400g", "400g", "400g"));
+            Add(new FeedingScheduel("200g", "", "200g"));
+            Add(new FeedingScheduel("300g", "200g", "300g"));
+            Add(new FeedingScheduel("200g", "100g", "200g"));
             Add(new FeedingScheduel("Eget foder", "Eget foder", "Eget Foder"));
+            Add(new FeedingScheduel("400g", "400g", "400g"));
+            Add(new FeedingScheduel("200g", "", "200g"));
+            Add(new FeedingScheduel("300g", "200g", "300g"));
         }
         public void Add(FeedingScheduel entity)
         {

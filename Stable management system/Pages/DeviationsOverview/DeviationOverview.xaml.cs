@@ -27,5 +27,7 @@ namespace Stable_management_system.Pages.Deviations
             InitializeComponent();
             DataContext = dvm;
         }
+
+       
     }
 }

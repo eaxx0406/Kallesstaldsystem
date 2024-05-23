@@ -29,6 +29,7 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        <Button Margin="0,375,10,10">Opret afvigelse</Button>
 
 
 

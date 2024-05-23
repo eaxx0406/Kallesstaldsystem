@@ -204,11 +204,14 @@ namespace Stable_management_system.ViewModels
             List<FeedingScheduel> allFeedingschduels = feedingScheduelController.GetAll();
             foreach (FeedingScheduel feedingscheduel in allFeedingschduels)
             {
-                if (feedingscheduel.Id == SelectedHorse.FeedingScheduelId)
+                try
                 {
-                    SelectedHorsesFeedingScheduel = feedingscheduel;
-                    break;
+                    if (feedingscheduel.Id == SelectedHorse.FeedingScheduelId)
+                    {
+                        SelectedHorsesFeedingScheduel = feedingscheduel;
+                    }
                 }
+                catch (NullReferenceException) { }
             }
         }
 
@@ -218,11 +221,15 @@ namespace Stable_management_system.ViewModels
             List<Paddock> allPaddocks = paddockController.GetAll();
             foreach (Paddock paddock in allPaddocks)
             {
-                if (paddock.Id == SelectedHorse.PaddockId)
+                try
                 {
-                    SelectedHorsePaddockName = paddock.Name;
-                    break;
+                    if (paddock.Id == SelectedHorse.PaddockId)
+                    {
+                        SelectedHorsePaddockName = paddock.Name;
+                        break;
+                    }
                 }
+                catch (NullReferenceException) { }
             }
         }
 
@@ -232,12 +239,16 @@ namespace Stable_management_system.ViewModels
             List<HorseOwner> allHorseOwners = horseOwnerController.GetAll();
             foreach (HorseOwner horseOwner in allHorseOwners)
             {
-                if (horseOwner.Id == SelectedHorse.OwnerId)
+                try
                 {
-                    SelectedHorseOwnerName = horseOwner.Name;
-                    SelectedHorseOwnerPhone = horseOwner.Phone;
-                    break;
+                    if (horseOwner.Id == SelectedHorse.OwnerId)
+                    {
+                        SelectedHorseOwnerName = horseOwner.Name;
+                        SelectedHorseOwnerPhone = horseOwner.Phone;
+                        break;
+                    }
                 }
+                catch (NullReferenceException) { }
             }
         }
     }
