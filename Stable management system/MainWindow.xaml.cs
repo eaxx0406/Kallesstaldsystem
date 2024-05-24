@@ -15,6 +15,7 @@ namespace StableManagementSystem
         public MainWindow()
         {
             InitializeComponent();
+            Main.Content = new Welcome();
         }
 
         private void HorseOverviewButton_Click(object sender, RoutedEventArgs e)

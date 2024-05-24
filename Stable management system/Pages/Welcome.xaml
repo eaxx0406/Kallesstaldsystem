@@ -1,0 +1,37 @@
+﻿<Page x:Class="Stable_management_system.Pages.Welcome"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Stable_management_system.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Welcome">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        
+        
+        <StackPanel Margin="20">
+            <Label FontWeight="Bold">Velkommen til Team 14s Getting Real projekt</Label>
+            <TextBlock  TextWrapping="Wrap">Vi har i dette projekt samarbejdet med Kallehavegård om at udvikle et staldsystem, der kan hjælpe de ansatte med at holde styr på de opstaldede heste og deres individulle behov.
+                I fremtiden ville vi gerne tilføje/redigere flere infomationer om fx tilkøb. Muligheden for at oprette folde og ændre deres udlejningsstatus kunne også implemteres
+                Det ville også være oplagt at lave et Login system hvor opstalderne selv villle kunne logge ind og tilføje/redigere info om egne heste.
+            </TextBlock>
+            <Label FontWeight="Bold">Tryk på en knap i toppen af skærmen for at fortsætte</Label>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="20" VerticalAlignment="Bottom">
+                <Label FontWeight="Bold">Known problems:</Label>
+                <TextBlock> Slet knappen i hesteoversigten kan være langsom, men giv den tid, den kommer.</TextBlock>
+                <TextBlock> Søg knappen i hesteoversigten kan være langsom, men giv den tid, den kommer.</TextBlock>
+                <TextBlock> Man kan på nuværende tidspunkt IKKE redigere foderplanen</TextBlock>
+                <TextBlock> Man kan på nuværende tidspunkt IKKE Tilføje Afvigelser</TextBlock>
+         </StackPanel>
+       
+    </Grid>
+</Page>

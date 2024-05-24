@@ -19,7 +19,7 @@
             <Button Content=" Foldoversigt " Margin="10" Click="PaddockOverviewButton_Click" FontWeight="Bold" />
             <Button Content=" Afvigelser " Margin="10" FontWeight="Bold" Click="DeviationButton_Click" />
         </StackPanel>
-        <Button Content=" Afslut " Margin="10" HorizontalAlignment="Right" FontWeight="Bold"></Button>
+        <Button Content=" Log ind " Margin="10" HorizontalAlignment="Right" FontWeight="Bold" IsEnabled="False"></Button>
 
         <!-- Frame -->
         <Frame x:Name="Main" Grid.Row="1"></Frame>
