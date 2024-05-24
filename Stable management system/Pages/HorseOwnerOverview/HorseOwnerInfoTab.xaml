@@ -9,6 +9,24 @@
       Title="HorseOwnerInfoTab">
 
     <Grid>
-        
+        <!-- Basal Opstalderinfo  -->
+        <StackPanel Orientation="Horizontal" Height="1200">
+            <Image Source="../Images/HorseOwner.jpg"  Height="100" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontWeight="Bold">Navn:</Label>
+                    <Label Width="100" Content="{Binding SelectedHorseOwner.Name}" HorizontalAlignment="Right" ></Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontWeight="Bold">Id:</Label>
+                    <Label Content="{Binding SelectedHorseOwner.Id}" Width="100" HorizontalAlignment="Right"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontWeight="Bold">Telefon:</Label>
+                    <Label Content="{Binding SelectedHorseOwner.Phone}" Width="100" HorizontalAlignment="Right"></Label>
+              
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

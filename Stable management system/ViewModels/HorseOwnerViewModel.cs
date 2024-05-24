@@ -1,6 +1,7 @@
 ﻿using ApplicationLayer.Controllers;
 using Kallesstaldsystem.Model;
 using Stable_management_system.Commands;
+using Stable_management_system.Commands.HorseOwnerCommands;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -56,9 +57,14 @@ namespace Stable_management_system.ViewModels
             _horseOwnerController.Remove(id);
             HorseOwners.Remove(SelectedHorseOwner);
         }
+        public void Update(HorseOwner horseOwner)
+        {
+            _horseOwnerController.Update(horseOwner);
+        }
         public ICommand CreateHorseOwnerCMD { get; set; } = new CreateHorseOwnerCommand();
         public ICommand DeleteHorseOwnerCMD { get; set; } = new DeleteHorseOwnerCommand();
         public ICommand SearchHorseOwnerCMD { get; set; } = new SearchHorseOwnerCommand();
+        public ICommand UpdateHorseOwnerCMD { get; set; } = new UpdateHorseOwnerCommand();
     }
 }
 

@@ -9,6 +9,24 @@
       Title="EditHorseOwnerTab">
 
     <Grid>
-        
+        <!-- Basal Opstalderinfo  -->
+        <StackPanel Grid.Row ="0" Orientation="Horizontal" Height="1200">
+            <Image Source="../Images/HorseOwner.jpg"  Height="100" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label  FontWeight="Bold">Navn</Label>
+                    <TextBox Width="100" Text="{Binding SelectedHorseOwner.Name, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Right" ></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontWeight="Bold">Id:</Label>
+                    <Label Content="{Binding SelectedHorseOwner.Id}" Width="100" HorizontalAlignment="Right"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontWeight="Bold">Telefon:</Label>
+                    <TextBox Text="{Binding SelectedHorseOwner.Phone, UpdateSourceTrigger=PropertyChanged}" Width="100" HorizontalAlignment="Right"></TextBox>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <Button Command="{Binding UpdateHorseOwnerCMD}" CommandParameter="{Binding}" Height="50" Click="SaveButton_Click">Gem opstalder</Button>
     </Grid>
 </Page>

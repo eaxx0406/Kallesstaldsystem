@@ -32,9 +32,9 @@ namespace Stable_management_system.Pages.HorseOwnerOverview
             Frame = frame;
         }
 
-        //private void SaveButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Frame.Content = new HorseOwnerInfoTab(HOvm);
-        //}
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Content = new HorseOwnerInfoTab(HOvm);
+        }
     }
 }
