@@ -16,7 +16,7 @@
             <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <!-- første kolonne (listboxen og de to knapper) -->
+        <!-- første kolonne (listboxen og de tre knapper) -->
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10">
             <TextBox Text="{Binding SearchForHorse}" Height="20" Width="151"/>
             <Button Command="{Binding SearchHorseCMD}" CommandParameter="{Binding}" Height="20">Søg</Button >

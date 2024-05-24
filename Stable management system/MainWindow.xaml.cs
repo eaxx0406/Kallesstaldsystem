@@ -2,6 +2,7 @@
 using Stable_management_system.Pages.Deviations;
 using Stable_management_system.ViewModels;
 using System.Windows;
+using Stable_management_system.Pages.HorseOwnerOverview;
 
 namespace StableManagementSystem
 {
@@ -26,9 +27,14 @@ namespace StableManagementSystem
             Main.Content = new PaddockOverview();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void DeviationButton_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new DeviationOverview();
+        }
+
+        private void HorseOwnerButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new HorseOwnerOverview();
         }
     }
 }
